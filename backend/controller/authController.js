@@ -1,6 +1,8 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import userModel from '../models/userModel';
+import userModel from '../models/userModel.js';
+
+{/*-----------------Register part----------------- */}
 
 export const register=async (req,res)=>{
 
@@ -21,7 +23,7 @@ export const register=async (req,res)=>{
         const user=new userModel({name,email,password:hashedPassword});
         await user.save();
 
-        const token=jwt.sign({id:user._id},process.env.JWT_SECRET,{expireIn:'7D'});
+        const token=jwt.sign({id:user._id},process.env.JWT_SECRET,{expiresIn:'7D'});
 
         res.cookie('token',token, {
             httpOnly:true,
@@ -39,7 +41,7 @@ export const register=async (req,res)=>{
 };
 {/*----------------------Login function-------------- */}
 
-export const login=async ()=>{
+export const login=async (req,res)=>{
 
     const{email,password}=req.body;
 
