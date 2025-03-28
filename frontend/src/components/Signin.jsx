@@ -4,14 +4,35 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 import { Container, Row, Col } from "react-bootstrap";
+import Navbars from "./Navbar";
 
 export default function Signin() {
   return (
-    <Container fluid className="min-vh-100 d-flex align-items-center bg-light">
+    <div  style={{
+      background: "linear-gradient(to right,rgb(197, 226, 245),rgb(49, 155, 243))",
+      
+      color: "white",
+    }}>
+
+      <Container-fluid>
+        <Navbars/>
+      </Container-fluid>
+      <Container fluid className="min-vh-100 d-flex align-items-center">
       <Row className="w-100 d-flex justify-content-center align-items-center">
-        {/* Left Side - Login Form */}
-        <Col lg={5} md={6} sm={12} className="d-flex justify-content-center">
-          <Card className="p-4 shadow-sm" style={{ width: "100%", maxWidth: "400px" }}>
+       
+
+        <Col lg={6} md={6} sm={12} className=" d-md-flex justify-content-center align-items-center ">
+          <img
+            src="src/assets/images/login.png"
+            alt="Login Page Illustration"
+            className="img-fluid"
+            style={{ maxWidth: "auto", height: "520px" }}
+          />
+        </Col>
+
+
+        <Col lg={6} md={6} sm={12} className="d-flex justify-content-center bg-transparent">
+          <Card className="p-4 shadow-sm" style={{ width: "100%", maxWidth: "50%",height:'520px' }}>
             <Card.Body>
               {/* Logo Centered */}
               <div className="d-flex justify-content-center align-items-center">
@@ -38,7 +59,7 @@ export default function Signin() {
                 <Form.Group className="mb-3" controlId="formRemember">
                   <Form.Check type="checkbox" label="Remember me" />
                 </Form.Group>
-                <Button variant="primary" type="submit" className="w-100 mb-2">
+                <Button variant="outline-info" type="submit" className="w-100 mb-2">
                   Login
                 </Button>
                 <Button variant="secondary" type="button" className="w-100">
@@ -49,16 +70,11 @@ export default function Signin() {
           </Card>
         </Col>
 
-        {/* Right Side - Image */}
-        <Col lg={7} md={6} sm={12} className="d-none d-md-flex justify-content-center align-items-center">
-          <img
-            src="src/assets/images/loginpage.jpg"
-            alt="Login Page Illustration"
-            className="img-fluid"
-            style={{ maxWidth: "90%", height: "auto" }}
-          />
-        </Col>
+        
+        
       </Row>
     </Container>
+    </div>
+    
   );
 }
