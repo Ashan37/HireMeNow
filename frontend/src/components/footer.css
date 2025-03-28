@@ -1,0 +1,49 @@
+.footer {
+    position: relative;
+    background: #1a1a1b;
+    padding: 50px 0;
+    width: 100%;
+}
+
+.footer__logo i, .footer__logo span {
+    color: #fff;
+}
+
+.no-underline {
+    text-decoration: none;
+}
+
+.quick__link{
+    background: none;
+    border: none;
+}
+
+.footer__logo-content,
+.quick__link a,
+.office__info,
+.section__description {
+    color: #fff;
+}
+
+.quick__link a:hover {
+    color: #f9a826;
+}
+
+.newsletter {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 50px;
+    background: #fff;
+}
+
+.newsletter input {
+    background: transparent;
+    border: none;
+    outline: none;
+    flex: 1;
+}
+.footer__link-title{
+    color: #fff;
+}
+
