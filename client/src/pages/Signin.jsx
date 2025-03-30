@@ -1,9 +1,12 @@
 import React from 'react'
+import Navbarr from '../components/Navbarr'
 
 export default function Signin() {
   return (
     <div>
-      <h1>hello</h1>
+      <Container-fluid>
+        <Navbarr/>
+      </Container-fluid>
     </div>
   )
 }
