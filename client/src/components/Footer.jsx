@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="sb__footer section__padding">
         
-        {/* Footer Links */}
+        
         <div className="sb__footer-links">
           
           <div className="sb__footer-links_div">
@@ -55,9 +55,9 @@ export default function Footer() {
 
         </div>
 
-        {/* Copyright Section */}
+        
         <div className="sb__footer_below">
-          <p>© {new Date().getFullYear()} CodeInn. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Copyright. All rights reserved.</p>
         </div>
 
       </div>
