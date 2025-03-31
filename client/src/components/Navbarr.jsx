@@ -9,7 +9,7 @@ function Navbarr() {
   return (
     <Navbar expand="lg" style={{background:"#caf0f8"}}>
       <Container fluid>
-        <Navbar.Brand href="/home">HireMeNow</Navbar.Brand>
+        <Navbar.Brand href="/home" style={{fontWeight:"700"}}>HireMeNow</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
