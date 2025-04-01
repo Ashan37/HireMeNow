@@ -4,63 +4,54 @@ import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import "remixicon/fonts/remixicon.css";
+import "../styles/signin.css";
 
 export default function Signin() {
   return (
-    <div>
+    <div className="signin">
       <Container-fluid>
         <Navbarr />
       </Container-fluid>
-      <Container>
-        <Row>
-          <Col lg='6' md='12'csm='12'>
+      <Container className="signin-container">
+        <Row className="justify-content-center">
+          <Col lg={5} md={7} sm={10} xs={12}>
             <div className="login_form">
               <form className="form">
-                <div className="head">
-                  <div className="input__head">
-                    <h1>Enter Email</h1>
-                  </div>
+                <h2 className="form-title">Login</h2>
 
-                  <div className="inputs">
-                    <div className="input-group">
-                      <span className="input-group-text">
-                        <i className="ri-mail-line"></i>
-                      </span>
-                      <input
-                        type="email"
-                        className="form-control"
-                        placeholder="Email"
-                      />
-                    </div>
-                  </div>
+                {/* Email Input */}
+                <div className="input-group">
+                  <span className="input-group-text">
+                    <i className="ri-mail-line"></i>
+                  </span>
+                  <input
+                    type="email"
+                    className="form-control"
+                    placeholder="Email"
+                  />
                 </div>
 
-                <div className="head">
-                  <div className="input__head">
-                    <h1>Enter Password</h1>
-                  </div>
+                {/* Password Input */}
+                <div className="input-group">
+                  <span className="input-group-text">
+                    <i className="ri-lock-line"></i>
+                  </span>
+                  <input
+                    type="password"
+                    className="form-control"
+                    placeholder="Password"
+                  />
+                </div>
 
-                  <div className="inputs">
-                    <div className="input-group">
-                      <span className="input-group-text">
-                        <i class="ri-lock-line"></i>{" "}
-                      </span>
-                      <input
-                        type="email"
-                        className="form-control"
-                        placeholder="Password"
-                      />
-                    </div>
-                  </div>
+                {/* Forgot Password */}
+                <div className="forgot-password">
+                  <Link to="#">Forgot Password?</Link>
                 </div>
-                <div className="">
-                  <Link to="#">
-                    <p>Forgotten password</p>
-                  </Link>
-                </div>
+
+                {/* Buttons */}
                 <div className="buttons">
-                  <button>Login</button>
-                  <button>Register</button>
+                  <button type="submit" className="btn-login">Login</button>
+                  <button type="button" className="btn-register">Register</button>
                 </div>
               </form>
             </div>
