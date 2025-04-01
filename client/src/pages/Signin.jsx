@@ -51,7 +51,7 @@ export default function Signin() {
                 {/* Buttons */}
                 <div className="buttons">
                   <button type="submit" className="btn-login">Login</button>
-                  <button type="button" className="btn-register">Register</button>
+                  <Link to='/signup'><button type="button" className="btn-register">Register</button></Link>
                 </div>
               </form>
             </div>
