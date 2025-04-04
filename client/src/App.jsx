@@ -1,13 +1,22 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Signin from './pages/Signin'
 import Home from './pages/Home'
 import Signup from './pages/Signup'
 import Contact from './pages/Contact'
 import About from './pages/About'
+import axios from 'axios';
+
 
 
 function App() {
+  const [message,setMessage]=useState("");
+
+  useEffect(()=>{
+    axios.get("http://localhost:4000/")
+    .then(response=>setMessage(response.data))
+    .catch(error=>console.error(error));
+  }, [])
   return (
     <Router>
       <Routes>
