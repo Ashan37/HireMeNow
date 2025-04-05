@@ -4,9 +4,10 @@ import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import "remixicon/fonts/remixicon.css";
-import "../styles/signin.css";
+import '../styles/signin.css';
 
 export default function Signin() {
+  
   return (
     <div className="signin">
       <Container-fluid>
@@ -49,9 +50,13 @@ export default function Signin() {
                 </div>
 
                 {/* Buttons */}
-                <div className="buttons">
-                  <button type="submit" className="btn-login">Login</button>
-                  <Link to='/signup'><button type="button" className="btn-register">Register</button></Link>
+                <div>
+                  <button type="submit" className="btn-login outline-primary">
+                    Login
+                  </button>
+                  <button type="button" className="btn-register">
+                    Register
+                  </button>
                 </div>
               </form>
             </div>

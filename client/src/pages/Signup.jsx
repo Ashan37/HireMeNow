@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import "remixicon/fonts/remixicon.css";
-import "../styles/signup.css";
+// import "../styles/signup.css";
 
 export default function Signup() {
   return (
