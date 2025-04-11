@@ -1,12 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbarr from "../components/Navbarr";
 import { Container, Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import "remixicon/fonts/remixicon.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 // import "../styles/signup.css";
 
 export default function Signup() {
+
+  const navigate=useNavigate();
+
+  const [formData, setFormData]=useState({
+    name:"",
+    email:"",
+    password:"",
+    confirmPassword:"",
+  });
+
+  const handleRegister=async (e)=>{
+    e.preventDefault();
+    const {name,email,password,confirmPassword}=formData;
+
+    if(password!==confirmPassword){
+      alert("Password do not match!");
+      return;
+    }
+    try{
+      const res=await axios.post("http://localhost:4000/api/register",{
+        name,
+        email,
+        password,
+      });
+      alert(res.data.message);
+      navigate("/signin");
+    }catch(err){
+      alert(err.response?.data?.message||"Registraion faild");
+    }
+  };
   return (
     <div className="signin">
       <Container-fluid>
