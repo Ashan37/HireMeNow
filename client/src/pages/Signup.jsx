@@ -13,7 +13,7 @@ export default function Signup() {
     name: "",
     email: "",
     password: "",
-    confirmPassword: "",
+   
   });
 
   const handleChange = (e) => {
@@ -25,12 +25,7 @@ export default function Signup() {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    const { name, email, password, confirmPassword } = formData;
-
-    if (password !== confirmPassword) {
-      alert("Passwords do not match!");
-      return;
-    }
+    const { name, email, password} = formData;
 
     try {
       const res = await axios.post("http://localhost:4000/api/register", {
@@ -40,7 +35,7 @@ export default function Signup() {
       });
 
       alert(res.data.message);
-      navigate("/signin");
+     
     } catch (err) {
       alert(err.response?.data?.message || "Registration failed");
     }
@@ -100,21 +95,6 @@ export default function Signup() {
                     placeholder="Password"
                     name="password"
                     value={formData.password}
-                    onChange={handleChange}
-                  />
-                </div>
-
-                {/* Confirm Password Input */}
-                <div className="input-group">
-                  <span className="input-group-text">
-                    <i className="ri-lock-line"></i>
-                  </span>
-                  <input
-                    type="password"
-                    className="form-control"
-                    placeholder="Re-enter Password"
-                    name="confirmPassword"
-                    value={formData.confirmPassword}
                     onChange={handleChange}
                   />
                 </div>
