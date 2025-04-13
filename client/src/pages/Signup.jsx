@@ -9,52 +9,59 @@ import axios from "axios";
 export default function Signup() {
   const navigate = useNavigate();
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-   
-  });
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleRegister = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const { name, email, password} = formData;
+
+    if (!name || !email || !password) {
+      alert("All fields are required");
+      return;
+    }
 
     try {
-      const res = await axios.post("http://localhost:4000/api/register", {
+      const res = await axios.post(
+        "http://localhost:4000/api/auth/register", 
+        {
         name,
         email,
         password,
-      });
+      },
+      {
+        withCredentials: true, 
+      }
+    );
 
-      alert(res.data.message);
-     
-    } catch (err) {
-      alert(err.response?.data?.message || "Registration failed");
+    if(res.data.success){
+      alert("User created successfully!");
+      navigate("/signin"); 
+    }
+    else{
+      alert(res.data.message||"Registration fail!");
+    }
+
+      
+    } catch (error) {
+      console.error("There was an error creating the user!", error);
+      alert(res.data.message || "Network error!");
     }
   };
 
   return (
     <div className="signin">
-      <Container-fluid>
+      <Container fluid>
         <Navbarr />
-      </Container-fluid>
+      </Container>
 
       <Container className="signin-container">
         <Row className="justify-content-center">
           <Col lg={5} md={7} sm={10} xs={12}>
             <div className="login_form">
-              <form className="form" onSubmit={handleRegister}>
+              <form className="form" onSubmit={handleSubmit}>
                 <h2 className="form-title">Register</h2>
 
-                {/* Name Input */}
                 <div className="input-group">
                   <span className="input-group-text">
                     <i className="ri-user-line"></i>
@@ -64,12 +71,12 @@ export default function Signup() {
                     className="form-control"
                     placeholder="Name"
                     name="name"
-                    value={formData.name}
-                    onChange={handleChange}
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                   />
                 </div>
 
-                {/* Email Input */}
+               
                 <div className="input-group">
                   <span className="input-group-text">
                     <i className="ri-mail-line"></i>
@@ -79,12 +86,12 @@ export default function Signup() {
                     className="form-control"
                     placeholder="Email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleChange}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
 
-                {/* Password Input */}
+          
                 <div className="input-group">
                   <span className="input-group-text">
                     <i className="ri-lock-line"></i>
@@ -94,12 +101,11 @@ export default function Signup() {
                     className="form-control"
                     placeholder="Password"
                     name="password"
-                    value={formData.password}
-                    onChange={handleChange}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
 
-                {/* Buttons */}
                 <div className="buttons">
                   <button type="submit" className="btn-register">
                     Register
@@ -111,9 +117,9 @@ export default function Signup() {
         </Row>
       </Container>
 
-      <Container-fluid>
+      <Container fluid>
         <Footer />
-      </Container-fluid>
+      </Container>
     </div>
   );
 }
