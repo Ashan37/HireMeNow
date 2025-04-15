@@ -1,13 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbarr from "../components/Navbarr";
 import { Container, Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import "remixicon/fonts/remixicon.css";
 import '../styles/signin.css';
+import axios from "axios";
+
 
 export default function Signin() {
-  
+  const navigate=useNavigate();
+
+  const [email,setEmail]=useState("");
+  const [password,setPassword]=useState("");
+
+  const handleLogin=async (e)=>{
+    e.preventDefault();
+
+    try{
+      const res =await axios.post("http://localhost:4000/api/auth/login",{
+        email,
+        password,
+      });
+      localStorage.setItem("token",res.data.token);
+      alert("Login successfully!");
+    }catch(error)
+    {
+      alert("Login failed!")
+    }
+  }
+
+
   return (
     <div className="signin">
       <Container-fluid>
@@ -29,6 +52,7 @@ export default function Signin() {
                     type="email"
                     className="form-control"
                     placeholder="Email"
+                    onChange={(e)=>setEmail(e.target.value)}
                   />
                 </div>
 
@@ -41,6 +65,7 @@ export default function Signin() {
                     type="password"
                     className="form-control"
                     placeholder="Password"
+                    onChange={(e)=>setPassword(e.target.value)}
                   />
                 </div>
 
@@ -53,9 +78,6 @@ export default function Signin() {
                 <div>
                   <button type="submit" className="btn-login outline-primary">
                     Login
-                  </button>
-                  <button type="button" className="btn-register">
-                    Register
                   </button>
                 </div>
               </form>
