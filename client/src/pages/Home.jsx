@@ -1,5 +1,4 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
 import Navbarr from "../components/Navbarr";
 import Footer from "../components/Footer";
 
@@ -14,5 +13,5 @@ export default function Home() {
         <Footer />
       </Container-fluid>
     </div>
-  );
+  )
 }
