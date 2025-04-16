@@ -26,7 +26,7 @@ export default function Signin() {
       alert("Login successfully!");
     }catch(error)
     {
-      alert("Login failed!")
+      alert("Login failed!");
     }
   }
 
