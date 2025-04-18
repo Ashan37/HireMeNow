@@ -1,24 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const slides = [
   {
     id: 1,
     title: "Welcome to HireMeNow",
-    subtitle: "Search a job for your future carrier",
-    image: "",
+    subtitle: "Search a job for your future career",
+    image: "src/assets/heroslider/image1.jpg",
   },
   {
-    id: 1,
-    title: "Welcome to HireMeNow",
-    subtitle: "Search a job for your future carrier",
-    image: "",
+    id: 2,
+    title: "Discover Opportunities",
+    subtitle: "Thousands of jobs at your fingertips",
+    image: "src/assets/heroslider/image2.jpg",
   },
   {
-    id: 1,
-    title: "Welcome to HireMeNow",
-    subtitle: "Search a job for your future carrier",
-    image: "",
+    id: 3,
+    title: "Your Future Starts Here",
+    subtitle: "Build your career with confidence",
+    image: "src/assets/heroslider/image3.jpg",
   },
 ];
 
@@ -33,6 +33,7 @@ export default function Heroslider() {
     const timer = setInterval(nextSlide, 5000);
     return () => clearInterval(timer);
   }, []);
+
   return (
     <div className="heroslider">
       <AnimatePresence>
@@ -44,14 +45,16 @@ export default function Heroslider() {
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
         >
-          <img
-            src={slides[index].image}
-            alt={slides[index].title}
-            className="slide-image"
-          />
+          {slides[index].image && (
+            <img
+              src={slides[index].image}
+              alt={slides[index].title}
+              className="slide-image"
+            />
+          )}
           <div className="slide-content">
             <h1>{slides[index].title}</h1>
-            <p>{slides}[index].subtitle</p>
+            <p>{slides[index].subtitle}</p>
           </div>
         </motion.div>
       </AnimatePresence>
