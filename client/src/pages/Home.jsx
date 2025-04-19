@@ -9,10 +9,10 @@ export default function Home() {
       <Container-fluid>
         <Navbarr />
       </Container-fluid>
-     <Heroslider/>
+      <Heroslider />
       <Container-fluid>
         <Footer />
       </Container-fluid>
     </div>
-  )
+  );
 }

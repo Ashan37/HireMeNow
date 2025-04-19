@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import '../styles/heroslider.css';
 
 const slides = [
   {
@@ -35,7 +36,7 @@ export default function Heroslider() {
   }, []);
 
   return (
-    <div className="heroslider">
+    <div className="hero-slider">
       <AnimatePresence>
         <motion.div
           key={slides[index].id}
