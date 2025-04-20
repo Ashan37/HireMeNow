@@ -44,6 +44,21 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="py-16 px-6 bg-white text-center">
+        <h2 className="text-3xl font-bold mb-4">Ready to find your next opportunity?</h2>
+        <p className="mb-6">Join thousands of users already hiring and getting hired on HireMeNow.</p>
+        <div className="flex justify-center gap-4">
+          <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+            Find a Job
+          </button>
+          <button className="bg-gray-200 text-gray-800 px-6 py-2 rounded-lg hover:bg-gray-300">
+            Post a Job
+          </button>
+        </div>
+      </section>
+
+      
       <Container-fluid>
         <Footer />
       </Container-fluid>
