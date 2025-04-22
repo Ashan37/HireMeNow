@@ -12,14 +12,19 @@ export default function Home() {
         <Navbarr />
       </Container-fluid>
       <Heroslider />
-      <section className="py-16 px-6 text-center bg-white">
-        <h1 className="text-4xl font-bold mb-4">Welcome to HireMeNow</h1>
-        <p className="text-lg max-w-2xl mx-auto">
-          Empowering job seekers and companies to connect seamlessly. Whether
-          you're hiring or hunting, HireMeNow makes the process simple, fast,
-          and efficient.
-        </p>
-      </section>
+      <section className="intro-section">
+  <div className="intro-content">
+    <h1 className="intro-title">
+      Welcome to <span className="highlight">HireMeNow</span>
+    </h1>
+    <p className="intro-subtitle">
+      Empowering job seekers and companies to connect seamlessly.
+      <br />
+      Whether you're hiring or hunting, <span className="highlight">HireMeNow</span> makes the process simple, fast, and efficient.
+    </p>
+  </div>
+</section>
+
 
       <section className="py-20 bg-blue-50">
         <div className="max-w-5xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-center">
@@ -82,8 +87,8 @@ export default function Home() {
   <Row className="categories_row">
     <Col className="category_col"><h4>Marketing</h4></Col>
     <Col className="category_col"><h4>Manufacturing</h4></Col>
-    <Col className="category_col"><h4>Transportation & Logistics</h4></Col>
     <Col className="category_col"><h4>Legal</h4></Col>
+    <Col className="category_col"><h4>Transportation & Logistics</h4></Col>
   </Row>
 </Container>
 

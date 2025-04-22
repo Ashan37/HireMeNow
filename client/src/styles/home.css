@@ -1,18 +1,55 @@
-.categories {
+.intro-section {
+    padding: 80px 20px;
+    background: linear-gradient(to bottom right, #eef5ff, #ffffff);
+    text-align: center;
+  }
+  
+  .intro-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .intro-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #1a2b4c;
+    margin-bottom: 20px;
+  }
+  
+  .intro-title .highlight {
+    color: #1d4ed8; /* blue-600 */
+  }
+  
+  .intro-subtitle {
+    font-size: 1.2rem;
+    color: #444;
+    font-weight: 500;
+    line-height: 1.6;
+  }
+  
+  .intro-subtitle .highlight {
+    color: #1d4ed8;
+    font-weight: 600;
+  }
+  .categories {
     padding: 2rem;
+    background-color: #f4f8ff;
+    border-radius: 16px;
   
     .categories_head {
       text-align: center;
       margin-bottom: 2rem;
   
       h1 {
-        font-size: 2.5rem;
-        font-weight: bold;
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: #1a2b4c;
       }
     }
   
     .categories_row {
       margin-bottom: 1.5rem;
+      gap: 1rem;
     }
   
     .category_col {
@@ -20,19 +57,37 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      min-height: 100px;
-      background-color: #f8f9fa;
-      border-radius: 8px;
-      transition: background-color 0.3s ease;
+      min-height: 120px;
+      background: linear-gradient(145deg, #b3d5fd, #d0e5ff);
+      border-radius: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
       
       h4 {
         margin: 0;
-        font-weight: 500;
+        font-weight: 600;
+        font-size: 1.2rem;
+        color: #1f2d3d;
       }
   
       &:hover {
-        background-color: #e2e6ea;
+        background: linear-gradient(145deg, #91c4ff, #b0d7ff);
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
         cursor: pointer;
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .category_col {
+        min-height: 100px;
+        h4 {
+          font-size: 1rem;
+        }
+      }
+  
+      .categories_head h1 {
+        font-size: 2rem;
       }
     }
   }
