@@ -3,6 +3,7 @@ import Navbarr from "../components/Navbarr";
 import Footer from "../components/Footer";
 import Heroslider from "../components/Heroslider";
 import {Container,Row,Col} from 'react-bootstrap';
+import
 
 export default function Home() {
   return (
@@ -59,56 +60,33 @@ export default function Home() {
         </div>
       </section>
 
-    <Container>
-      <div>
-        <h1>Categories</h1>
-      </div>
-      <Row>
-        <Col>
-        <h4>Healthcare</h4>
-        </Col>
-        <Col>
-        <h4>Informaion</h4>
-        </Col>
-        <Col>
-        <h4>Education</h4>
-        </Col>
-        <Col>
-        <h4>Finance</h4>
-        </Col>
-      </Row>
+      <Container className="categories">
+  <div className="categories_head">
+    <h1>Categories</h1>
+  </div>
 
-      <Row>
-        <Col>
-        <h4>Hospitality & Tourism</h4>
-        </Col>
-        <Col>
-        <h4>Engineering</h4>
-        </Col>
-        <Col>
-        <h4>Construction</h4>
-        </Col>
-        <Col>
-        <h4>Retail</h4>
-        </Col>
-      </Row>
+  <Row className="categories_row">
+    <Col className="category_col"><h4>Healthcare</h4></Col>
+    <Col className="category_col"><h4>Information Technology</h4></Col>
+    <Col className="category_col"><h4>Education</h4></Col>
+    <Col className="category_col"><h4>Finance</h4></Col>
+  </Row>
 
-      <Row>
-        <Col>
-        <h4>Marketing</h4>
-        </Col>
-        <Col>
-        <h4>Manufacturing</h4>
-        </Col>
-        <Col>
-        <h4>Transpotation</h4>
-        </Col>
-        <Col>
-        <h4>Legal</h4>
-        </Col>
-      </Row> 
+  <Row className="categories_row">
+    <Col className="category_col"><h4>Hospitality & Tourism</h4></Col>
+    <Col className="category_col"><h4>Engineering</h4></Col>
+    <Col className="category_col"><h4>Construction</h4></Col>
+    <Col className="category_col"><h4>Retail</h4></Col>
+  </Row>
 
-    </Container>
+  <Row className="categories_row">
+    <Col className="category_col"><h4>Marketing</h4></Col>
+    <Col className="category_col"><h4>Manufacturing</h4></Col>
+    <Col className="category_col"><h4>Transportation & Logistics</h4></Col>
+    <Col className="category_col"><h4>Legal</h4></Col>
+  </Row>
+</Container>
+
       
       <Container-fluid>
         <Footer />
