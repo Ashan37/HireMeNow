@@ -3,7 +3,7 @@ import Navbarr from "../components/Navbarr";
 import Footer from "../components/Footer";
 import Heroslider from "../components/Heroslider";
 import {Container,Row,Col} from 'react-bootstrap';
-import
+import  '/src/styles/home.css';
 
 export default function Home() {
   return (
