@@ -27,36 +27,37 @@ export default function Home() {
         </div>
       </section>
 
-      <Container>
-        <Row>
-          <Col lg="6" md="6" sm="6">
-            <h1>For Job Seekers</h1>
-            <div>
-              <p>
-                Looking for your next big career move? Our platform connects job
-                seekers with top employers across industries. Browse hundreds of
-                verified job listings, filter by location, role, or experience
-                level, and apply in just a few clicks. Whether you're starting
-                fresh or leveling up, your next opportunity is just a search
-                away.
-              </p>
-            </div>
-          </Col>
-          <Col lg="6" md="6" sm="6">
-            <h1>For Employes</h1>
-            <div>
-              <p>
-                Post jobs, find top talent, and streamline your hiring process
-                with our easy-to-use platform. Whether you're a startup or an
-                established company, reach qualified candidates actively looking
-                for roles in your industry. Create job listings, manage
-                applications, and connect with potential hires — all in one
-                place.
-              </p>
-            </div>
-          </Col>
-        </Row>
-      </Container>
+      <Container className="job-section">
+  <Row>
+    <Col lg="6" md="6" sm="12" className="job-card seeker-card">
+      <h1 className="card-title">For Job Seekers</h1>
+      <div className="card-content">
+        <p>
+          Looking for your next big career move? Our platform connects job
+          seekers with top employers across industries. Browse hundreds of
+          verified job listings, filter by location, role, or experience
+          level, and apply in just a few clicks. Whether you're starting
+          fresh or leveling up, your next opportunity is just a search
+          away.
+        </p>
+      </div>
+    </Col>
+    <Col lg="6" md="6" sm="12" className="job-card employer-card">
+      <h1 className="card-title">For Employers</h1>
+      <div className="card-content">
+        <p>
+          Post jobs, find top talent, and streamline your hiring process
+          with our easy-to-use platform. Whether you're a startup or an
+          established company, reach qualified candidates actively looking
+          for roles in your industry. Create job listings, manage
+          applications, and connect with potential hires — all in one
+          place.
+        </p>
+      </div>
+    </Col>
+  </Row>
+</Container>
+
 
      
 
