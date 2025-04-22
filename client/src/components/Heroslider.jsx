@@ -7,19 +7,19 @@ const slides = [
     id: 1,
     title: "Welcome to HireMeNow",
     subtitle: "Search a job for your future career",
-    image: "src/assets/heroslider/image1.jpg",
+    image: "src/assets/heroslider/img1.jpg",
   },
   {
     id: 2,
     title: "Discover Opportunities",
     subtitle: "Thousands of jobs at your fingertips",
-    image: "src/assets/heroslider/image2.jpg",
+    image: "src/assets/heroslider/img2.jpg",
   },
   {
     id: 3,
     title: "Your Future Starts Here",
     subtitle: "Build your career with confidence",
-    image: "src/assets/heroslider/image3.jpg",
+    image: "src/assets/heroslider/img3.jpg",
   },
 ];
 

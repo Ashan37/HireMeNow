@@ -2,8 +2,8 @@ import React from "react";
 import Navbarr from "../components/Navbarr";
 import Footer from "../components/Footer";
 import Heroslider from "../components/Heroslider";
-import {Container,Row,Col} from 'react-bootstrap';
-import  '/src/styles/home.css';
+import { Container, Row, Col } from "react-bootstrap";
+import "/src/styles/home.css";
 
 export default function Home() {
   return (
@@ -13,48 +13,60 @@ export default function Home() {
       </Container-fluid>
       <Heroslider />
       <section className="intro-section">
-  <div className="intro-content">
-    <h1 className="intro-title">
-      Welcome to <span className="highlight">HireMeNow</span>
-    </h1>
-    <p className="intro-subtitle">
-      Empowering job seekers and companies to connect seamlessly.
-      <br />
-      Whether you're hiring or hunting, <span className="highlight">HireMeNow</span> makes the process simple, fast, and efficient.
-    </p>
-  </div>
-</section>
-
-
-      <section className="py-20 bg-blue-50">
-        <div className="max-w-5xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-center">
-          <div>
-            <h2 className="text-xl font-semibold mb-2">🔍 For Job Seekers</h2>
-            <p>
-              Browse thousands of job listings, filter by skills, and apply
-              directly with your profile.
-            </p>
-          </div>
-          <div>
-            <h2 className="text-xl font-semibold mb-2">🏢 For Employers</h2>
-            <p>
-              Post jobs in minutes, view applications, and hire the best talent
-              for your team.
-            </p>
-          </div>
-          <div>
-            <h2 className="text-xl font-semibold mb-2">⚡ Fast & Simple</h2>
-            <p>
-              Minimal steps. Maximum results. Say goodbye to long forms and
-              outdated platforms.
-            </p>
-          </div>
+        <div className="intro-content">
+          <h1 className="intro-title">
+            Welcome to <span className="highlight">HireMeNow</span>
+          </h1>
+          <p className="intro-subtitle">
+            Empowering job seekers and companies to connect seamlessly.
+            <br />
+            Whether you're hiring or hunting,{" "}
+            <span className="highlight">HireMeNow</span> makes the process
+            simple, fast, and efficient.
+          </p>
         </div>
       </section>
 
+      <Container>
+        <Row>
+          <Col lg="6" md="6" sm="6">
+            <h1>For Job Seekers</h1>
+            <div>
+              <p>
+                Looking for your next big career move? Our platform connects job
+                seekers with top employers across industries. Browse hundreds of
+                verified job listings, filter by location, role, or experience
+                level, and apply in just a few clicks. Whether you're starting
+                fresh or leveling up, your next opportunity is just a search
+                away.
+              </p>
+            </div>
+          </Col>
+          <Col lg="6" md="6" sm="6">
+            <h1>For Employes</h1>
+            <div>
+              <p>
+                Post jobs, find top talent, and streamline your hiring process
+                with our easy-to-use platform. Whether you're a startup or an
+                established company, reach qualified candidates actively looking
+                for roles in your industry. Create job listings, manage
+                applications, and connect with potential hires — all in one
+                place.
+              </p>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+
+     
+
       <section className="py-16 px-6 bg-white text-center">
-        <h2 className="text-3xl font-bold mb-4">Ready to find your next opportunity?</h2>
-        <p className="mb-6">Join thousands of users already hiring and getting hired on HireMeNow.</p>
+        <h2 className="text-3xl font-bold mb-4">
+          Ready to find your next opportunity?
+        </h2>
+        <p className="mb-6">
+          Join thousands of users already hiring and getting hired on HireMeNow.
+        </p>
         <div className="flex justify-center gap-4">
           <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
             Find a Job
@@ -66,33 +78,56 @@ export default function Home() {
       </section>
 
       <Container className="categories">
-  <div className="categories_head">
-    <h1>Categories</h1>
-  </div>
+        <div className="categories_head">
+          <h1>Categories</h1>
+        </div>
 
-  <Row className="categories_row">
-    <Col className="category_col"><h4>Healthcare</h4></Col>
-    <Col className="category_col"><h4>Information Technology</h4></Col>
-    <Col className="category_col"><h4>Education</h4></Col>
-    <Col className="category_col"><h4>Finance</h4></Col>
-  </Row>
+        <Row className="categories_row">
+          <Col className="category_col">
+            <h4>Healthcare</h4>
+          </Col>
+          <Col className="category_col">
+            <h4>Information Technology</h4>
+          </Col>
+          <Col className="category_col">
+            <h4>Education</h4>
+          </Col>
+          <Col className="category_col">
+            <h4>Finance</h4>
+          </Col>
+        </Row>
 
-  <Row className="categories_row">
-    <Col className="category_col"><h4>Hospitality & Tourism</h4></Col>
-    <Col className="category_col"><h4>Engineering</h4></Col>
-    <Col className="category_col"><h4>Construction</h4></Col>
-    <Col className="category_col"><h4>Retail</h4></Col>
-  </Row>
+        <Row className="categories_row">
+          <Col className="category_col">
+            <h4>Hospitality & Tourism</h4>
+          </Col>
+          <Col className="category_col">
+            <h4>Engineering</h4>
+          </Col>
+          <Col className="category_col">
+            <h4>Construction</h4>
+          </Col>
+          <Col className="category_col">
+            <h4>Retail</h4>
+          </Col>
+        </Row>
 
-  <Row className="categories_row">
-    <Col className="category_col"><h4>Marketing</h4></Col>
-    <Col className="category_col"><h4>Manufacturing</h4></Col>
-    <Col className="category_col"><h4>Legal</h4></Col>
-    <Col className="category_col"><h4>Transportation & Logistics</h4></Col>
-  </Row>
-</Container>
+        <Row className="categories_row">
+          <Col className="category_col">
+            <h4>Marketing</h4>
+          </Col>
+          <Col className="category_col">
+            <h4>Manufacturing</h4>
+          </Col>
+          <Col className="category_col">
+            <h4>Legal</h4>
+          </Col>
+          <Col className="category_col">
+            <h4>Transportation & Logistics</h4>
+          </Col>
+        </Row>
+      </Container>
 
-      
       <Container-fluid>
         <Footer />
       </Container-fluid>
