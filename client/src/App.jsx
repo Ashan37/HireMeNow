@@ -5,7 +5,7 @@ import Home from './pages/Home'
 import Signup from './pages/Signup'
 import Contact from './pages/Contact'
 import About from './pages/About'
-import aftersignin from './pages/aftersignin';
+import Hello from './pages/Hello'
 
 
 function App() {
@@ -18,8 +18,7 @@ function App() {
         <Route path="/contact" element={<Contact/>} />
         <Route path="/signin" element={<Signin/>} />
         <Route path="/signup" element={<Signup/>} />
-        <Route path="/aftersignin" element={<aftersignin.jsx/>} />
-        
+        <Route path="/hello" element={<Hello/>}/>      
       </Routes>
     </Router>
   )

@@ -24,7 +24,7 @@ export default function Signin() {
       });
       localStorage.setItem("token",res.data.token);
       alert("Login successfully!");
-      navigate('/aftersignin');
+      navigate("/hello");
     }catch(error)
     {
       alert("Login failed!");

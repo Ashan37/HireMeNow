@@ -79,7 +79,7 @@ export default function Home() {
 
       <Container className="categories">
         <div className="categories_head">
-          <h1>Categories</h1>
+          <h1>Job Categories</h1>
         </div>
 
         <Row className="categories_row">
@@ -128,7 +128,19 @@ export default function Home() {
         </Row>
       </Container>
 
- 
+      <Section>
+        <div>
+        <div>
+          <h1>find the talent needed to<br/>get your business growing</h1>
+          <div>
+          <button>Get started</button>
+            </div>
+        </div>
+        <div>
+          <img src="" alt="" />
+        </div>
+        </div>
+      </Section>
 
       <Container-fluid>
         <Footer />
