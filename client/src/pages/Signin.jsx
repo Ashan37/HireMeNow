@@ -24,6 +24,7 @@ export default function Signin() {
       });
       localStorage.setItem("token",res.data.token);
       alert("Login successfully!");
+      navigate('/aftersignin');
     }catch(error)
     {
       alert("Login failed!");
@@ -40,7 +41,7 @@ export default function Signin() {
         <Row className="justify-content-center">
           <Col lg={5} md={7} sm={10} xs={12}>
             <div className="login_form">
-              <form className="form">
+              <form className="form" onSubmit={handleLogin}>
                 <h2 className="form-title">Login</h2>
 
                 {/* Email Input */}

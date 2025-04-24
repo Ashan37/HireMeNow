@@ -4,7 +4,8 @@ import Footer from "../components/Footer";
 import Heroslider from "../components/Heroslider";
 import { Container, Row, Col } from "react-bootstrap";
 import "/src/styles/home.css";
-import CustomerComments from "../components/customerCommentSection";
+
+
 
 export default function Home() {
   return (
@@ -127,7 +128,7 @@ export default function Home() {
         </Row>
       </Container>
 
-     <CustomerComments/>
+ 
 
       <Container-fluid>
         <Footer />
