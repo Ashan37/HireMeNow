@@ -128,19 +128,23 @@ export default function Home() {
         </Row>
       </Container>
 
-      <Section>
-        <div>
-        <div>
-          <h1>find the talent needed to<br/>get your business growing</h1>
-          <div>
-          <button>Get started</button>
-            </div>
+      <section className="middle-card-container">
+      <div className="middle-card">
+        <div className="middle-card-content">
+          <h1>
+            Find the talent<br />to grow your business
+          </h1>
+          <button className="middle-card-button">Get Started</button>
         </div>
-        <div>
-          <img src="" alt="" />
+        <div className="middle-card-image">
+          <img
+            src="src/assets/home/image1.jpg"
+            alt="Recruitment illustration"
+          />
         </div>
-        </div>
-      </Section>
+      </div>
+    </section>
+
 
       <Container-fluid>
         <Footer />
