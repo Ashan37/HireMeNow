@@ -129,6 +129,7 @@ export default function Home() {
 
       <section className="steps-part">
         <div className="steps-container">
+          {/* LEFT SIDE: STEPS CONTENT */}
           <div className="steps-content">
             <div className="steps-header">
               <h1 className="steps-title">
@@ -139,33 +140,39 @@ export default function Home() {
                 you with the right freelancer.
               </p>
             </div>
+
             <div className="steps-list">
               <div className="step-item">
-                <h3 className="step-title"><span>1</span> Register an account</h3>
+                <h3 className="step-title">1. Register an account</h3>
                 <p className="step-description">
-                  {" "}
                   Sign up with your email and complete your profile to get
                   started on your job hunt journey.
                 </p>
               </div>
               <div className="step-item">
-                <h3 className="step-title"><span>2</span> Find your job</h3>
+                <h3 className="step-title">2. Find your job</h3>
                 <p className="step-description">
                   Browse thousands of job listings tailored to your skills and
                   preferences.
                 </p>
               </div>
               <div className="step-item">
-                <h3 className="step-title"><span>3</span> Apply for job</h3>
+                <h3 className="step-title">3. Apply for job</h3>
                 <p className="step-description">
                   Submit your application with a single click and track your
                   progress easily.
                 </p>
               </div>
             </div>
-            <div className="steps-image">
-              <img src="src/assets/home/image2.jpg" alt="" className="steps-img" />
-            </div>
+          </div>
+
+          {/* RIGHT SIDE: IMAGE */}
+          <div className="steps-image">
+            <img
+              src="src/assets/home/image2.jpg"
+              alt="Job Steps"
+              className="steps-img"
+            />
           </div>
         </div>
       </section>
