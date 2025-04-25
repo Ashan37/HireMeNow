@@ -58,25 +58,6 @@ export default function Home() {
         </Row>
       </Container>
 
-      <section className="py-16 px-6 bg-white text-center">
-        <h2 className="text-3xl font-bold mb-4">
-          Ready to find your next opportunity?
-        </h2>
-        <p className="mb-6">
-          Join thousands of users already hiring and getting hired on HireMeNow.
-        </p>
-        <div className="flex justify-center gap-4">
-          <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
-            Find a Job
-          </button>
-          <button className="bg-gray-200 text-gray-800 px-6 py-2 rounded-lg hover:bg-gray-300">
-            Post a Job
-          </button>
-        </div>
-      </section>
-
-     
-
       <Container className="categories">
         <div className="categories_head">
           <h1>Job Categories</h1>
@@ -146,35 +127,46 @@ export default function Home() {
 
       {/* step about how to find a job */}
 
-      <section>
-        <div>
-          <div>
-          <div>
-            <h1>Find your next job in 3 easy steps</h1>
-            <p>
-              Post a job to tell us about your project. We'll quickly match you
-              with the right freelancer.
-            </p>
-          </div>
-          <div>
-            <div>
-              <h3>Register an account</h3>
-              <p>aaaaaaaa</p>
+      <section className="steps-part">
+        <div className="steps-container">
+          <div className="steps-content">
+            <div className="steps-header">
+              <h1 className="steps-title">
+                Find your next job in 3 easy steps
+              </h1>
+              <p className="steps-description">
+                Post a job to tell us about your project. We'll quickly match
+                you with the right freelancer.
+              </p>
             </div>
-            <div>
-              <h3>Find your job</h3>
-              <p>aaaaaaaa</p>
+            <div className="steps-list">
+              <div className="step-item">
+                <h3 className="step-title"><span>1</span> Register an account</h3>
+                <p className="step-description">
+                  {" "}
+                  Sign up with your email and complete your profile to get
+                  started on your job hunt journey.
+                </p>
+              </div>
+              <div className="step-item">
+                <h3 className="step-title"><span>2</span> Find your job</h3>
+                <p className="step-description">
+                  Browse thousands of job listings tailored to your skills and
+                  preferences.
+                </p>
+              </div>
+              <div className="step-item">
+                <h3 className="step-title"><span>3</span> Apply for job</h3>
+                <p className="step-description">
+                  Submit your application with a single click and track your
+                  progress easily.
+                </p>
+              </div>
             </div>
-            <div>
-              <h3>Apply for job</h3>
-              <p>aaaaaaaaaa</p>
+            <div className="steps-image">
+              <img src="src/assets/home/image2.jpg" alt="" className="steps-img" />
             </div>
           </div>
-          <div>
-            <img src="" alt="" />
-          </div>
-          </div>
-         
         </div>
       </section>
 
