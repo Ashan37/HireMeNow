@@ -5,8 +5,6 @@ import Heroslider from "../components/Heroslider";
 import { Container, Row, Col } from "react-bootstrap";
 import "/src/styles/home.css";
 
-
-
 export default function Home() {
   return (
     <div>
@@ -129,22 +127,20 @@ export default function Home() {
       </Container>
 
       <section className="middle-card-container">
-      <div className="middle-card">
-        <div className="middle-card-content">
-          <h1>
-            Find the talent<br />to grow your business
-          </h1>
-          <button className="middle-card-button">Get Started</button>
+        <div className="middle-card">
+          <div className="middle-card-content">
+            <h1>
+              Find the talent
+              <br />
+              to grow your business
+            </h1>
+            <button className="middle-card-button">Get Started</button>
+          </div>
+          <div className="middle-card-image">
+            <img src="src/assets/home/image1.png" alt="man" />
+          </div>
         </div>
-        <div className="middle-card-image">
-          <img
-            src="src/assets/home/image1.jpg"
-            alt="Recruitment illustration"
-          />
-        </div>
-      </div>
-    </section>
-
+      </section>
 
       <Container-fluid>
         <Footer />
