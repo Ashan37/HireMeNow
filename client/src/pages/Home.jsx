@@ -75,6 +75,8 @@ export default function Home() {
         </div>
       </section>
 
+     
+
       <Container className="categories">
         <div className="categories_head">
           <h1>Job Categories</h1>
@@ -139,6 +141,40 @@ export default function Home() {
           <div className="middle-card-image">
             <img src="src/assets/home/image1.png" alt="man" />
           </div>
+        </div>
+      </section>
+
+      {/* step about how to find a job */}
+
+      <section>
+        <div>
+          <div>
+          <div>
+            <h1>Find your next job in 3 easy steps</h1>
+            <p>
+              Post a job to tell us about your project. We'll quickly match you
+              with the right freelancer.
+            </p>
+          </div>
+          <div>
+            <div>
+              <h3>Register an account</h3>
+              <p>aaaaaaaa</p>
+            </div>
+            <div>
+              <h3>Find your job</h3>
+              <p>aaaaaaaa</p>
+            </div>
+            <div>
+              <h3>Apply for job</h3>
+              <p>aaaaaaaaaa</p>
+            </div>
+          </div>
+          <div>
+            <img src="" alt="" />
+          </div>
+          </div>
+         
         </div>
       </section>
 
