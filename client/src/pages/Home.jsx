@@ -178,40 +178,51 @@ export default function Home() {
       </section>
 
       <Container className="career-tips">
-  <h1 className="career-tips-title">Quick Career Tips</h1>
-  <Row className="career-tips-row">
-    <Col lg="3" md="6" sm="12" className="career-tip-card">
-      <div className="career-tip-image">
-        <img src="src/assets/home/tips/image1.jpg" alt="tip1" />
-      </div>
-      <div className="career-tip-content">
-        <h5>Build Your Network</h5>
-        <p>Connecting with the right people can fast-track your career. Use professional platforms, attend industry events, and never hesitate to reach out.</p>
-      </div>
-    </Col>
+        <h1 className="career-tips-title">Quick Career Tips</h1>
+        <p>To achieve your gaols</p>
+        <Row className="career-tips-row">
+          <Col lg="3" md="6" sm="12" className="career-tip-card">
+            <div className="career-tip-image">
+              <img src="src/assets/home/tips/image1.jpg" alt="tip1" />
+            </div>
+            <div className="career-tip-content">
+              <h5>Build Your Network</h5>
+              <p>
+                Connecting with the right people can fast-track your career. Use
+                professional platforms, attend industry events, and never
+                hesitate to reach out.
+              </p>
+            </div>
+          </Col>
 
-    <Col lg="3" md="6" sm="12" className="career-tip-card">
-      <div className="career-tip-image">
-        <img src="src/assets/home/tips/image2.jpg" alt="tip2" />
-      </div>
-      <div className="career-tip-content">
-        <h5>Upskill Regularly</h5>
-        <p>The job market rewards those who stay current. Invest time in learning new technologies, certifications, or soft skills to stay ahead.</p>
-      </div>
-    </Col>
+          <Col lg="3" md="6" sm="12" className="career-tip-card">
+            <div className="career-tip-image">
+              <img src="src/assets/home/tips/image2.jpg" alt="tip2" />
+            </div>
+            <div className="career-tip-content">
+              <h5>Upskill Regularly</h5>
+              <p>
+                The job market rewards those who stay current. Invest time in
+                learning new technologies, certifications, or soft skills to
+                stay ahead.
+              </p>
+            </div>
+          </Col>
 
-    <Col lg="3" md="6" sm="12" className="career-tip-card">
-      <div className="career-tip-image">
-        <img src="src/assets/home/tips/image3.jpg" alt="tip3" />
-      </div>
-      <div className="career-tip-content">
-        <h5>Showcase Your Strengths</h5>
-        <p>Your resume and interviews should highlight what makes you stand out. Be clear, confident, and focus on results you've achieved.</p>
-      </div>
-    </Col>
-  </Row>
-</Container>
-
+          <Col lg="3" md="6" sm="12" className="career-tip-card">
+            <div className="career-tip-image">
+              <img src="src/assets/home/tips/image3.jpg" alt="tip3" />
+            </div>
+            <div className="career-tip-content">
+              <h5>Showcase Your Strengths</h5>
+              <p>
+                Your resume and interviews should highlight what makes you stand
+                out. Be clear, confident, and focus on results you've achieved.
+              </p>
+            </div>
+          </Col>
+        </Row>
+      </Container>
 
       <Container-fluid>
         <Footer />
