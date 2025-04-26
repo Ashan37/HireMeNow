@@ -177,6 +177,48 @@ export default function Home() {
         </div>
       </section>
 
+      <Container>
+        <h1>Quick Carrer Tips</h1>
+        <Row>
+          <Col lg='3' md='6' sm='12'>
+          <div>
+            <img src="" alt="" />
+          </div>
+          <div>
+            <h3></h3>
+            <p></p>
+          </div>
+          </Col>
+          <Col lg='3' md='6' sm='12'>
+          <div>
+            <img src="" alt="" />
+          </div>
+          <div>
+            <h3></h3>
+            <p></p>
+          </div>
+          </Col>
+          <Col lg='3' md='6' sm='12'>
+          <div>
+            <img src="" alt="" />
+          </div>
+          <div>
+            <h3></h3>
+            <p></p>
+          </div>
+          </Col>
+          <Col lg='3' md='6' sm='12'>
+          <div>
+            <img src="" alt="" />
+          </div>
+          <div>
+            <h3></h3>
+            <p></p>
+          </div>
+          </Col>
+        </Row>
+      </Container>
+
       <Container-fluid>
         <Footer />
       </Container-fluid>
