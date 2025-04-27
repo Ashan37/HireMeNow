@@ -3,15 +3,23 @@ import Navbarr from "../components/Navbarr";
 import Footer from "../components/Footer";
 import Heroslider from "../components/Heroslider";
 import { Container, Row, Col } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import "/src/styles/home.css";
 
 export default function Home() {
+
+  const navigate=useNavigate();
+  const handleChange=()=>{
+    navigate('/signup');
+  };
   return (
     <div>
       <Container-fluid>
         <Navbarr />
       </Container-fluid>
       <Heroslider />
+
+      {/* intro section */}
       <section className="intro-section">
         <div className="intro-content">
           <h1 className="intro-title">
@@ -58,6 +66,7 @@ export default function Home() {
         </Row>
       </Container>
 
+      {/* Categories part */}
       <Container className="categories">
         <div className="categories_head">
           <h1>Job Categories</h1>
@@ -109,6 +118,7 @@ export default function Home() {
         </Row>
       </Container>
 
+      {/* Card part */}
       <section className="middle-card-container">
         <div className="middle-card">
           <div className="middle-card-content">
@@ -117,7 +127,7 @@ export default function Home() {
               <br />
               to grow your business
             </h1>
-            <button className="middle-card-button">Get Started</button>
+            <button className="middle-card-button" onClick={handleChange}>Get Started</button>
           </div>
           <div className="middle-card-image">
             <img src="src/assets/home/image1.png" alt="man" />
@@ -177,6 +187,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Carrer tips part */}
       <Container className="career-tips">
         <h1 className="career-tips-title">Quick Career Tips</h1>
         <p>To achieve your gaols</p>
@@ -223,6 +234,8 @@ export default function Home() {
           </Col>
         </Row>
       </Container>
+
+      {/* Footer Part */}
 
       <Container-fluid>
         <Footer />
