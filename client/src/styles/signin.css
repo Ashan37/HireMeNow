@@ -1,188 +1,146 @@
+/* Signin and Signup shared styles */
+.signin-page,
+.signup-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-.signin {
-    background-color: #f5f7fa;
-    min-height: 100vh;
+/* Section styling */
+.signin-section,
+.signup-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+}
 
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Centered Container*/
-  .signin-container {
-    
-    align-items: center;
-    justify-content: center;
-    min-height: 80vh;
-    margin-top: 10vh;
- 
-  }
-  
-  /* Login Form */
-  .login_form {
-    background: #fff;
-    padding: 3rem;
-    border-radius: 12px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-    text-align: center;
-    width: 100%;
-    max-width: 450px; /* ✅ Ensures form looks good on large screens */
-  }
-  
-  /* Form Title */
-  .form-title {
-    font-size: 26px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  /* Input Group */
-  .input-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    background: #fff;
-  }
-  
-  .input-group-text {
-    background: #f5f7fa;
-    padding: 14px;
-    border-right: 1px solid #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #666;
-  }
-  
-  .form-control {
-    border: none;
-    padding: 14px;
-    flex: 1;
-    font-size: 16px;
-    outline: none;
-    width: 100%;
-  }
-  
-  /* Forgot Password */
-  .forgot-password {
-    text-align: center;
-    justify-content: center;
-    margin: 12px 0;
-  }
-  
-  .forgot-password a {
-    color: #000000;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  
-  .forgot-password a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Buttons */
-  
-  
-  .btn-login, .btn-register {
-    width: 48%;
-    padding: 14px;
-    border-radius: 8px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .btn-login {
-    background-color: #414141;
-    color: white;
-  }
-  
-  .btn-login:hover {
-    background-color: #0056b3;
-  }
-  
-  .btn-register {
-    background-color: #28a745;
-    color: white;
-  }
-  
-  .btn-register:hover {
-    background-color: #218838;
-  }
-  
-  /* ✅ Responsive Design */
-  @media (max-width: 1024px) {
-    /* Adjust container width */
-    .signin-container {
-      width: 85%;
-    }
-  
-    /* Reduce form width slightly */
-    .login_form {
-      max-width: 400px;
-      padding: 2.5rem;
-    }
-  
-    .form-title {
-      font-size: 24px;
-    }
-  
-    .form-control {
-      font-size: 15px;
-      padding: 12px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    /* Adjust container width */
-    .signin-container {
-      width: 90%;
-    }
-  
-    /* Stack buttons on smaller screens */
-    .buttons {
-      flex-direction: column;
-    }
-    
-    .btn-login, .btn-register {
-      width: 100%;
-      margin-bottom: 10px;
-    }
-  
-    /* Reduce form padding */
-    .login_form {
-      padding: 2rem;
-    }
-  
-    .form-title {
-      font-size: 22px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    /* Smaller font for better spacing */
-    .form-title {
-      font-size: 20px;
-    }
-  
-    .form-control {
-      font-size: 14px;
-      padding: 10px;
-    }
-  
-    .input-group-text {
-      padding: 10px;
-    }
-  
-    /* Adjust button size */
-    .btn-login, .btn-register {
-      font-size: 14px;
-      padding: 12px;
-    }
-  }
-  
+/* Card container */
+.signin-card,
+.signup-card {
+  display: flex;
+  max-width: 1000px;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Image container */
+.signin-image-container,
+.signup-image-container {
+  flex: 1;
+  background: #eee;
+}
+
+.signin-image,
+.signup-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Form container */
+.signin-form-container,
+.signup-form-container {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Form styles */
+.form {
+  width: 100%;
+}
+
+.form-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.input-group-text {
+  background-color: #eee;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-control {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+/* Forgot password */
+.forgot-password {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.forgot-password a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+/* Button styles */
+.button-group {
+  text-align: center;
+}
+
+.btn-login,
+.btn-register {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-login:hover,
+.btn-register:hover {
+  background-color: #0056b3;
+}
+
+/* Redirect text */
+.signup-redirect,
+.login-redirect {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.signup-link,
+.login-link {
+  color: #007bff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.signup-link:hover,
+.login-link:hover {
+  text-decoration: underline;
+}
