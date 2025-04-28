@@ -1,17 +1,16 @@
 import React from 'react'
 import Navbarr from "../components/Navbarr";
 import Footer from "../components/Footer";
+import HeroSliderAbout from '../components/HeroSliderAbout';
 
 export default function About() {
   return (
     <div>
-       <Container-fluid>
+       
         <Navbarr />
-      </Container-fluid>
-
-      <Container-fluid>
+        <HeroSliderAbout/>
         <Footer />
-      </Container-fluid>
+      
     </div>
   )
 }
