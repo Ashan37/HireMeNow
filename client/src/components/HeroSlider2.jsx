@@ -1,7 +1,7 @@
 import React from 'react'
 import '/src/styles/aboutheroslider.css'
 
-export default function HeroSliderAbout() {
+export default function HeroSlider2() {
   return (
     <div>
        <section className="hero-slider">
