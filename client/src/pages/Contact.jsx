@@ -2,14 +2,14 @@ import React from 'react';
 import Navbarr from "../components/Navbarr";
 import Footer from "../components/Footer";
 import HeroSlider2 from '../components/HeroSlider2';
-import './Contact.css'; // Custom styles
+import '/src/styles/contact.css'; // Custom styles
 
 export default function Contact() {
   return (
     <div>
-      <div className="container-fluid">
+      
         <Navbarr />
-      </div>
+      
 
       <HeroSlider2 />
 
@@ -63,9 +63,9 @@ export default function Contact() {
         </div>
       </section>
 
-      <div className="container-fluid">
+      
         <Footer />
-      </div>
+      
     </div>
   );
 }
