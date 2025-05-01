@@ -40,7 +40,7 @@ export default function About() {
         <section className="py-5">
           <div className="container d-flex flex-column flex-md-row align-items-center">
             <div className="col-md-6 text-center mb-4 mb-md-0">
-              <img src="https://via.placeholder.com/500x300" alt="Our Vision" className="img-fluid rounded shadow" />
+              <img src="src/assets/about/image2.jpg" alt="Our Vision" className="img-fluid rounded shadow" />
             </div>
             <div className="col-md-6">
               <h2 className="h3 text-primary mb-3">Our Vision</h2>
