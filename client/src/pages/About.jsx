@@ -31,7 +31,7 @@ export default function About() {
               </p>
             </div>
             <div className="col-md-6 text-center">
-              <img src="https://via.placeholder.com/500x300" alt="Our Mission" className="img-fluid rounded shadow" />
+              <img src="src/assets/about/image3.jpg" alt="Our Mission" className="img-fluid rounded shadow" />
             </div>
           </div>
         </section>
