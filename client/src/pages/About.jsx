@@ -2,7 +2,7 @@ import React from 'react';
 import Navbarr from '../components/Navbarr';
 import Footer from '../components/Footer';
 import HeroSliderAbout from '../components/HeroSlider2';
-
+import '/src/styles/about.css'; 
 
 export default function About() {
   return (

@@ -1,0 +1,33 @@
+.about-hero {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 60px 0;
+  }
+  
+  .about-hero h1 {
+    font-weight: 700;
+  }
+  
+  .about-hero p {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  section img {
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title {
+    font-weight: 600;
+  }
+  
+  .card-text {
+    font-size: 0.95rem;
+  }
+  
+  @media (max-width: 768px) {
+    .about-hero {
+      padding: 40px 20px;
+    }
+  }
+  
