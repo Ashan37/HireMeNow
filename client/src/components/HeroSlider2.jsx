@@ -1,5 +1,5 @@
 import React from 'react';
-import '/src/styles/aboutheroslider.css';
+import '/src/styles/heroslider2.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function HeroSlider2() {
