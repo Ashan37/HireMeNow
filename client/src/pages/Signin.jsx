@@ -23,7 +23,7 @@ export default function Signin() {
       });
       localStorage.setItem("token",res.data.token);
       alert("Login successfully!");
-      navigate("/hello");
+      navigate("/profile");
     }catch(error)
     {
       alert("Login failed!");
