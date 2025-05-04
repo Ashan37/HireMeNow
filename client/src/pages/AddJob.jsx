@@ -26,7 +26,7 @@ const AddJobVacancyForm = () => {
     try {
       const response = await axios.post("/api/jobs", formData);
       if (response.status === 201) {
-        setMessage("✅ Job vacancy added successfully!");
+        setMessage("Job vacancy added successfully!");
         setFormData({
           title: "",
           company: "",
@@ -40,13 +40,15 @@ const AddJobVacancyForm = () => {
       }
     } catch (error) {
       console.error(error);
-      setMessage("❌ Error submitting the form.");
+      setMessage("Error submitting the form.");
     } finally {
       setLoading(false);
     }
   };
 
   return (
+    <div>
+        <Navbarr/>
     <div className="card shadow mt-5 mx-auto border-primary" style={{ maxWidth: "700px" }}>
       <div className="card-header bg-primary text-white text-center">
         <h4 className="mb-0">Add a New Job Vacancy</h4>
@@ -149,6 +151,9 @@ const AddJobVacancyForm = () => {
         </form>
       </div>
     </div>
+    <Footer/>
+    </div>
+    
   );
 };
 
