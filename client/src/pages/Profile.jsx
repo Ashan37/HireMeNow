@@ -2,11 +2,19 @@ import React from 'react'
 import Navbarr from '../components/Navbarr'
 import Footer from '../components/Footer'
 import { Container,Row,Col } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 
 export default function Profile() {
+  const navigate=useNavigate();
+  const handleChange=()=>{
+    navigate('/addjob')
+  }
   return (
    <div>
     <Navbarr/>
+    <div>
+      <button onClick={handleChange}>Post a Job</button> 
+    </div>
      {/* Categories part */}
      <Container className="categories">
         <div className="categories_head">
