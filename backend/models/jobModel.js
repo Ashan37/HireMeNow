@@ -6,7 +6,7 @@ const jobSchema=new mongoose.Schema({
     location: { type: String, required: true },
     salary: { type: String, required: true },
     type: { type: String, required: true },
-    description: { type: String, required: true },
+    description: { type: Selection, required: true },
 });
 
 const jobModel=mongoose.models.job||mongoose.model('job',jobSchema);
