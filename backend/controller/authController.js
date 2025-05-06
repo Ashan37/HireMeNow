@@ -1,6 +1,7 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import userModel from '../models/userModel.js';
+import jobModel from '../models/jobModel.js';
 
 {/*-----------------Job Adding part----------------- */}
 
@@ -12,29 +13,10 @@ export const addjob=async (req,res)=>{
         return res.json({success:false,message:'Missing Details'})
     }
     try{
-        // const existingUser=await jobModel.findOne({email})
-
-        // if(existingUser){
-            // return res.json({success:false, message: "User already exists"});
-        // }
-
-        // const hashedPassword=await bcrypt.hash(password,10);
-
+        
         const job=new jobModel({title,company,location,salary,type,description});
         await job.save();
-
-        //sign part shold be change
-        const token=jwt.sign({id:user._id},process.env.JWT_SECRET,{expiresIn:'7D'});
-
-        res.cookie('token',token, {
-            httpOnly:true,
-            secure:process.env.NODE_ENV === 'production',
-            sameSite:process.env.NODE_ENV === 'production'? 'none' : 'strict',
-            maxAge:7*24*60*60*1000
-        });
-
-       
-
+        
         return res.json({
             success:true,
             message:"Job adding successful",
