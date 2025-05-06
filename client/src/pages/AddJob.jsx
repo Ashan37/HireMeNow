@@ -2,52 +2,51 @@ import React, { useState } from "react";
 import Navbarr from "../components/Navbarr";
 import Footer from "../components/Footer";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-const AddJobVacancyForm = () => {
-  const [formData, setFormData] = useState({
-    title: "",
-    company: "",
-    location: "",
-    salary: "",
-    type: "",
-    description: "",
-  });
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
+export default function AddJobVacancyForm () {
+  const navigate=useNavigate();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  const [title,setTitle]=useState("");
+  const [company,setCompany]=useState("");
+  const [location,setLocation]=useState("");
+  const [salary,setSalary]=useState("");
+  const [type,setType]=useState("");
+  const [description,setDescription]=useState("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit=async (e)=>{
     e.preventDefault();
-    setLoading(true);
-    setMessage("");
 
-    try {
-      const response = await axios.post("/api/jobs", formData);
-      if (response.status === 201) {
-        setMessage("Job vacancy added successfully!");
-        setFormData({
-          title: "",
-          company: "",
-          location: "",
-          salary: "",
-          type: "",
-          description: "",
-        });
-      } else {
-        setMessage("⚠️ Something went wrong. Please try again.");
-      }
-    } catch (error) {
-      console.error(error);
-      setMessage("Error submitting the form.");
-    } finally {
-      setLoading(false);
+    if(!title||!company||!location||!salary||!type){
+      alert("Fill the all details!");
+      return;
     }
-  };
-
+    try{
+      const res =await axios.post("http://localhost:4000/api/auth/register",
+        {
+          title,
+          company,
+          location,
+          salary,
+          type,
+          description,
+        },
+        {
+          withCredentials:true,
+        }
+      );
+      if(res.data.success){
+        alert("Job add successfully!");
+        navigate('/addjob');
+      }
+      else{
+        alert(res.data.message||"Failed!");
+      }
+    }catch(error){
+      console.error("There was an error adding a job!",error);
+      alert(res.data.message|| "Error!");
+    }
+  }
   return (
     <div>
         <Navbarr/>
@@ -60,11 +59,11 @@ const AddJobVacancyForm = () => {
           <div className="mb-3">
             <label className="form-label fw-bold">Job Title</label>
             <input
+            className="form-control border-primary"
               type="text"
               name="title"
-              value={formData.title}
-              onChange={handleChange}
-              className="form-control border-primary"
+              value={title}
+              onChange={(e)=>setTitle(e.target.value)}
               placeholder="Enter the job title"
               required
             />
@@ -75,8 +74,8 @@ const AddJobVacancyForm = () => {
             <input
               type="text"
               name="company"
-              value={formData.company}
-              onChange={handleChange}
+              value={company}
+              onChange={(e)=>setCompany(e.target.value)}
               className="form-control border-primary"
               placeholder="Enter company name"
               required
@@ -89,8 +88,8 @@ const AddJobVacancyForm = () => {
               <input
                 type="text"
                 name="location"
-                value={formData.location}
-                onChange={handleChange}
+                value={location}
+                onChange={(e)=>setLocation(e.target.value)}
                 className="form-control border-primary"
                 placeholder="e.g., Remote, New York"
                 required
@@ -101,8 +100,8 @@ const AddJobVacancyForm = () => {
               <input
                 type="text"
                 name="salary"
-                value={formData.salary}
-                onChange={handleChange}
+                value={salary}
+                onChange={(e)=>setSalary(e.target.value)}
                 className="form-control border-primary"
                 placeholder="e.g., $60,000/year"
               />
@@ -113,8 +112,8 @@ const AddJobVacancyForm = () => {
             <label className="form-label fw-bold">Job Type</label>
             <select
               name="type"
-              value={formData.type}
-              onChange={handleChange}
+              value={type}
+              onChange={(e)=>setType(e.target.value)}
               className="form-select border-primary"
               required
             >
@@ -130,8 +129,8 @@ const AddJobVacancyForm = () => {
             <label className="form-label fw-bold">Job Description</label>
             <textarea
               name="description"
-              value={formData.description}
-              onChange={handleChange}
+              value={description}
+              onChange={(e)=>setDescription(e.target.value)}
               className="form-control border-primary"
               rows="4"
               placeholder="Enter a detailed job description"
@@ -157,6 +156,6 @@ const AddJobVacancyForm = () => {
     </div>
     
   );
-};
+}
 
-export default AddJobVacancyForm;
+
