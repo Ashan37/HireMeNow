@@ -3,6 +3,7 @@ import Navbarr from '../components/Navbarr'
 import Footer from '../components/Footer'
 import { Container,Row,Col } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
+import JobList from '../components/JobList'
 
 export default function Profile() {
   const navigate=useNavigate();
@@ -66,6 +67,8 @@ export default function Profile() {
           </Col>
         </Row>
       </Container>
+
+    <JobList/>
 
     <Footer/>
    </div>
