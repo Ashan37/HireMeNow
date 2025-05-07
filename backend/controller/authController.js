@@ -27,6 +27,17 @@ export const addjob=async (req,res)=>{
     }
     
 };
+
+{/*-----------------Get Job part----------------- */}
+export const getjobs = async (req, res) => {
+    try {
+        const jobs = await jobModel.find(); // fetch all jobs from database
+        return res.json(jobs); // return as JSON array
+    } catch (error) {
+        res.status(500).json({ success: false, message: error.message });
+    }
+};
+
 {/*-----------------Register part----------------- */}
 
 export const register=async (req,res)=>{
