@@ -29,7 +29,7 @@ export const addjob=async (req,res)=>{
 };
 
 {/*-----------------Get Job part----------------- */}
-export const getjobs = async (req, res) => {
+export const getjob = async (req, res) => {
     try {
         const jobs = await jobModel.find(); // fetch all jobs from database
         return res.json(jobs); // return as JSON array

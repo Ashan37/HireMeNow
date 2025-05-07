@@ -6,7 +6,7 @@ export default function JobList() {
 
     useEffect(() => {
         const fetchJobs = async () => {
-            const res = await axios.get("http://localhost:4000/api/auth/getjobs"); // ✅ use correct GET route
+            const res = await axios.get("http://localhost:4000/api/auth/getjob"); // ✅ use correct GET route
             setJobs(res.data);
         };
         fetchJobs();
