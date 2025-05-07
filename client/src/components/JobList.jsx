@@ -16,7 +16,7 @@ export default function JobList() {
         <div>
             <h1>Job List</h1>
             {jobs.map((job) => ( // ✅ rename inner variable to avoid shadowing
-                <div key={job.id}>
+                <div key={job._id}>
                     <h2>{job.title}</h2>
                     <h2>{job.company}</h2>
                     <h2>{job.location}</h2>
