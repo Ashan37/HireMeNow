@@ -1,5 +1,5 @@
 import express from 'express';
-import {register,login, logout,addjob,getjob} from '../controller/authController.js'
+import {register,login, logout,addjob,getjob, getCurrentUser} from '../controller/authController.js'
 
 const authRouter=express.Router();
 
@@ -8,5 +8,6 @@ authRouter.post('/login',login);
 authRouter.post('/logout',logout);
 authRouter.post('/addjob',addjob);
 authRouter.get('/getjob',getjob);
+authRouter.get('/user',getCurrentUser);
 
 export default authRouter;
