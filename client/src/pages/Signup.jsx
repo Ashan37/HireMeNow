@@ -37,7 +37,7 @@ export default function Signup() {
 
       if (res.data.success) {
         alert("User created successfully!");
-        navigate("/signin");
+        navigate("/profile");
       } else {
         alert(res.data.message || "Registration fail!");
       }
