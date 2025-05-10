@@ -20,8 +20,8 @@ export default function Signin() {
       const res =await axios.post("http://localhost:4000/api/auth/login",{
         email,
         password,
-      });
-      localStorage.setItem("token",res.data.token);
+      },{withCredentials:true});
+      
       alert("Login successfully!");
       navigate("/profile");
     }catch(error)
