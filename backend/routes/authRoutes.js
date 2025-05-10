@@ -8,6 +8,6 @@ authRouter.post('/login',login);
 authRouter.post('/logout',logout);
 authRouter.post('/addjob',addjob);
 authRouter.get('/getjob',getjob);
-authRouter.get('/user',getCurrentUser);
+authRouter.get('/me',getCurrentUser);
 
 export default authRouter;
