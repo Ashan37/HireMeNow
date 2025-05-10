@@ -17,11 +17,11 @@ export default function Profile() {
         if (res.data.success) {
           setUser(res.data.user);
         } else {
-          navigate('/signin');  // not logged in → redirect
+          navigate('/signin');  
         }
       } catch (error) {
         console.error(error);
-        navigate('/signin');  // error → redirect
+        navigate('/signin');  
       }
     };
 

@@ -17,8 +17,8 @@ function Navbarr() {
         if (res.data.success) {
           setUser(res.data.user);
         }
-      } catch (error) {
-        console.error('Not logged in', error);
+      } catch (err) {
+        console.error(err);
       }
     };
 
@@ -27,11 +27,11 @@ function Navbarr() {
 
   const handleLogout = async () => {
     try {
-      await axios.post('http://localhost:4000/api/auth/logout', {}, { withCredentials: true });
+      await axios.get('http://localhost:4000/api/auth/logout', { withCredentials: true });
       setUser(null);
       navigate('/signin');
-    } catch (error) {
-      console.error('Logout failed', error);
+    } catch (err) {
+      console.error(err);
     }
   };
 
@@ -50,12 +50,11 @@ function Navbarr() {
             <Nav.Link href="/about">About</Nav.Link>
             <Nav.Link href="/contact">Contact Us</Nav.Link>
           </Nav>
-
           <div className='d-flex gap-2'>
             {user ? (
               <>
-                <span style={{ fontWeight: 'bold', alignSelf: 'center' }}>Hi, {user.name}</span>
-                <Button variant="outline-dark" onClick={handleLogout}>Logout</Button>
+                <span style={{ fontWeight: "600" }}>Welcome, {user.name}</span>
+                <Button onClick={handleLogout} variant="outline-dark">Logout</Button>
               </>
             ) : (
               <>
