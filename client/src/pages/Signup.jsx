@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Navbarr from "../components/Navbarr";
-import { Container, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import "remixicon/fonts/remixicon.css";
@@ -37,7 +36,7 @@ export default function Signup() {
 
       if (res.data.success) {
         alert("User created successfully!");
-        navigate("/profile");
+        navigate("/signin");
       } else {
         alert(res.data.message || "Registration fail!");
       }
