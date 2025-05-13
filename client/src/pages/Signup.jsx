@@ -104,11 +104,11 @@ export default function Signup() {
                   <i class="ri-phone-line"></i>
                 </span>
                 <input
-                  type="password"
+                  type="tel"
                   className="form-control"
                   placeholder="Phone Number"
                   name="number"
-                  value={password}
+                  value={number}
                   onChange={(e) => setNumber(e.target.value)}
                 />
               </div>
