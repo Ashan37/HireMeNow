@@ -53,7 +53,7 @@ function Navbarr() {
           <div className='d-flex gap-2'>
             {user ? (
               <>
-                <span style={{ fontWeight: "600" }}>Welcome, {user.name}</span>
+                <span style={{ fontWeight: "600" }}>{user.name}</span>
                 <Button onClick={handleLogout} variant="outline-dark">Logout</Button>
               </>
             ) : (
