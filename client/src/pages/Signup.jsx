@@ -11,12 +11,13 @@ export default function Signup() {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [number, setNumber] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!name || !email || !password) {
+    if (!name || !email || !number|| !password) {
       alert("All fields are required");
       return;
     }
@@ -27,6 +28,7 @@ export default function Signup() {
         {
           name,
           email,
+          number,
           password,
         },
         {
@@ -94,6 +96,20 @@ export default function Signup() {
                   name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+
+              <div className="input-group">
+                <span className="input-group-text">
+                  <i class="ri-phone-line"></i>
+                </span>
+                <input
+                  type="password"
+                  className="form-control"
+                  placeholder="Phone Number"
+                  name="number"
+                  value={password}
+                  onChange={(e) => setNumber(e.target.value)}
                 />
               </div>
   
