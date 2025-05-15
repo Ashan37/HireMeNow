@@ -1,6 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useEffect,useState } from 'react'
+import '/src/styles/applyform.css'
 import axios from 'axios'
 
 export default function ApplyForm() {
@@ -23,12 +24,11 @@ export default function ApplyForm() {
     },[jobId]);
     if(!job||!job.title)return <p>Loading....</p>;
   return (
-    <div>
+     <div className="apply-container">
       <h1>Apply for: {job.title}</h1>
       <p><strong>Company:</strong> {job.company}</p>
       <p>{job.description}</p>
 
-      {/* Here you can add a form to collect user application data */}
       <form>
         <input type="text" placeholder="Your Name" required />
         <input type="email" placeholder="Your Email" required />
