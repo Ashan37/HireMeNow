@@ -8,6 +8,7 @@ import About from './pages/About';
 import Profile from './pages/Profile';
 import AddJob from './pages/AddJob';
 import Navbarr from './components/Navbarr'; // include your Navbar here
+import ApplyForm from './pages/ApplyForm';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/addjob" element={<AddJob />} />
+        <Route path="/apply/:jobId" element={<ApplyForm />} />
       </Routes>
     </>
   );
