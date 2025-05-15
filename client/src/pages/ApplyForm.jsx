@@ -5,17 +5,23 @@ import axios from 'axios'
 
 export default function ApplyForm() {
     const {jobId}=useParams();
-    const [job,setJob]=useState();
+    const [job,setJob]=useState(null);
+    const [loading,setLoading]=useState(true);
 
     useEffect(()=>{
         const fetchJob=async()=>{
+           try{
             const res=await axios.get(`http://localhost:4000/api/auth/getjob/${jobId}`);
+            console.log("Fetched job:", res.data);
             setJob(res.data);
+           }catch(error){
+            console.log("Error fetching job: ",error)
+           }
         };
         fetchJob();
 
     },[jobId]);
-    if(!job)return <p>Loading....</p>;
+    if(!job||!job.title)return <p>Loading....</p>;
   return (
     <div>
       <h1>Apply for: {job.title}</h1>

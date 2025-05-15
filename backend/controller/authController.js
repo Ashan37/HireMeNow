@@ -21,6 +21,20 @@ export const addjob = async (req, res) => {
     }
 };
 
+/*-----------------Get JobID part----------------- */
+// Controller to fetch one job by ID
+export const getJobById = async (req, res) => {
+  try {
+    const job = await jobModel.findById(req.params.id);
+    if (!job) {
+      return res.status(404).json({ success: false, message: 'Job not found' });
+    }
+    return res.json(job);
+  } catch (error) {
+    return res.status(500).json({ success: false, message: error.message });
+  }
+};
+
 /*-----------------Get Job part----------------- */
 export const getjob = async (req, res) => {
     try {
