@@ -34,7 +34,7 @@ export const getjob = async (req, res) => {
 /*-----------------Register part----------------- */
 export const register = async (req, res) => {
     const { name, email,number, password } = req.body;
-    if (!name || !email || !number || !password) {
+    if (!name || !email || !number|| !password) {
         return res.json({ success: false, message: 'Missing Details' });
     }
     try {
@@ -43,7 +43,7 @@ export const register = async (req, res) => {
             return res.json({ success: false, message: "User already exists" });
         }
         const hashedPassword = await bcrypt.hash(password, 10);
-        const user = new userModel({ name, email,number, password: hashedPassword });
+        const user = new userModel({ name, email,number,password: hashedPassword });
         await user.save();
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '7D' });
         res.cookie('token', token, {

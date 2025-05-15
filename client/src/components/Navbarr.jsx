@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 function Navbarr() {
@@ -11,8 +11,8 @@ function Navbarr() {
   const navigate = useNavigate();
 
   const handleLogoutClick = async () => {
-    await logout();           // clears cookie + context.user
-    navigate('/signin');      // redirect
+    await logout();           
+    navigate('/signin');      
   };
 
   return (
@@ -36,8 +36,12 @@ function Navbarr() {
           <div className="d-flex gap-2">
             {user ? (
               <>
+              
                 <span style={{ fontWeight: 600 }}>
-                  {user.name}
+                  <Link to={'/profile'} style={{textDecoration:'none',color:'inherit'}}>
+                   {user.name}
+                  </Link>
+                 
                 </span>
                 {/* This is the “Logout Button”:
                     it calls our shared logout() and then redirects */}
