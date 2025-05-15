@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Navbarr from "../components/Navbarr";
 import Footer from "../components/Footer";
 import { Container, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
@@ -37,7 +36,6 @@ export default function Profile() {
 
   return (
     <div>
-      <Navbarr />
       <div className="dashboard-container">
         {user ? (
           <>

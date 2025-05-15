@@ -1,5 +1,4 @@
 import React from "react";
-import Navbarr from "../components/Navbarr";
 import Footer from "../components/Footer";
 import Heroslider from "../components/Heroslider";
 import { Container, Row, Col } from "react-bootstrap";
@@ -14,9 +13,6 @@ export default function Home() {
   };
   return (
     <div>
-      <Container-fluid>
-        <Navbarr />
-      </Container-fluid>
       <Heroslider />
 
       {/* intro section */}

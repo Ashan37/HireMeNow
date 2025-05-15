@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navbarr from "../components/Navbarr";
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import "remixicon/fonts/remixicon.css";
@@ -33,7 +32,6 @@ export default function Signin() {
 
   return (
     <div className="signin-page">
-  <Navbarr />
 
   {/* Main Section */}
   <section className="signin-section">

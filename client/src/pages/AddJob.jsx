@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navbarr from "../components/Navbarr";
 import Footer from "../components/Footer";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -58,7 +57,7 @@ export default function AddJob() {
 
   return (
     <div>
-      <Navbarr />
+      
       <div
         className="card shadow mt-5 mx-auto border-primary"
         style={{ maxWidth: "700px" }}

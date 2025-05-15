@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbarr from "../components/Navbarr";
 import Footer from "../components/Footer";
 import HeroSlider2 from '../components/HeroSlider2';
 import '/src/styles/contact.css'; // Custom styles
@@ -7,9 +6,6 @@ import '/src/styles/contact.css'; // Custom styles
 export default function Contact() {
   return (
     <div>
-      
-        <Navbarr />
-      
 
       <HeroSlider2 />
 

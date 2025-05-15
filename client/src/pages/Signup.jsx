@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navbarr from "../components/Navbarr";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import "remixicon/fonts/remixicon.css";
@@ -50,7 +49,6 @@ export default function Signup() {
 
   return (
     <div className="signup-page">
-    <Navbarr />
   
     {/* Main Section */}
     <section className="signup-section">
