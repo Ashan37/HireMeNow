@@ -5,12 +5,12 @@ import jobModel from '../models/jobModel.js';
 
 /*-----------------Job Adding part----------------- */
 export const addjob = async (req, res) => {
-    const { title, company, location, salary, type, description } = req.body;
-    if (!title || !company || !location || !salary || !type || !description) {
+    const { title, company, location, salary, type,category, description } = req.body;
+    if (!title || !company || !location || !salary || !type ||!category|| !description) {
         return res.json({ success: false, message: 'Missing Details' });
     }
     try {
-        const job = new jobModel({ title, company, location, salary, type, description });
+        const job = new jobModel({ title, company, location, salary, type,category, description });
         await job.save();
         return res.json({
             success: true,

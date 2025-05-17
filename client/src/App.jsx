@@ -1,4 +1,3 @@
-// App.jsx
 import { Routes, Route } from 'react-router-dom';
 import Signin from './pages/Signin';
 import Home from './pages/Home';
@@ -7,7 +6,7 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import Profile from './pages/Profile';
 import AddJob from './pages/AddJob';
-import Navbarr from './components/Navbarr'; // include your Navbar here
+import Navbarr from './components/Navbarr';
 import ApplyForm from './pages/ApplyForm';
 
 function App() {

@@ -11,19 +11,19 @@ export default function AddJob() {
   const [location, setLocation] = useState("");
   const [salary, setSalary] = useState("");
   const [type, setType] = useState("");
+  const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
-
-  const [loading, setLoading] = useState(false); // ✅ Added loading state
+  const [loading, setLoading] = useState(false); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!title || !company || !location || !salary || !type) {
+    if (!title || !company || !location || !salary || !type ||!category) {
       alert("Fill all the details!");
       return;
     }
 
-    setLoading(true); // ✅ Start loading
+    setLoading(true); 
 
     try {
       const res = await axios.post(
@@ -34,6 +34,7 @@ export default function AddJob() {
           location,
           salary,
           type,
+          category,
           description,
         },
         {
@@ -51,7 +52,7 @@ export default function AddJob() {
       console.error("There was an error adding a job!", error);
       alert(error.response?.data?.message || "Error!");
     } finally {
-      setLoading(false); // ✅ Stop loading regardless of success/failure
+      setLoading(false); 
     }
   };
 
@@ -134,6 +135,32 @@ export default function AddJob() {
                 <option value="Part-time">Part-time</option>
                 <option value="Contract">Contract</option>
                 <option value="Internship">Internship</option>
+              </select>
+            </div>
+
+            
+            <div className="mb-3">
+              <label className="form-label fw-bold">Job Category</label>
+              <select
+                name="type"
+                value={type}
+                onChange={(e) => setCategory(e.target.value)}
+                className="form-select border-primary"
+                required
+              >
+                <option value="">Select Category</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Information-Technology">Information Technology</option>
+                <option value="Education">Education</option>
+                <option value="Finance">Finance</option>
+                <option value="Hospitality & Tourism">Hospitality & Tourism</option>
+                <option value="Egineeringn">Egineeringn</option>
+                <option value="Construction">Construction</option>
+                <option value="Retail">Retail</option>
+                <option value="Markerting">Markerting</option>
+                <option value="Manufacturing">Manufacturing</option>
+                <option value="Legal">Legal</option>
+                <option value="Transportation & Logistics">Transportation & Logistics</option>
               </select>
             </div>
 
