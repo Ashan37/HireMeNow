@@ -56,6 +56,22 @@ export default function AddJob() {
     }
   };
 
+  const categories=[
+    "Healthcare",
+        "Information Technology",
+    "Education",
+    "Finance",
+    "Hospitality & Tourism",
+    "Engineering",
+    "Construction",
+    "Retail",
+    "Marketing",
+    "Manufacturing",
+    "Legal",
+    "Transportation & Logistics",
+
+  ]
+
   return (
     <div>
       
@@ -142,25 +158,16 @@ export default function AddJob() {
             <div className="mb-3">
               <label className="form-label fw-bold">Job Category</label>
               <select
-                name="type"
-                value={type}
+                name="category"
+                value={category}
                 onChange={(e) => setCategory(e.target.value)}
                 className="form-select border-primary"
                 required
               >
                 <option value="">Select Category</option>
-                <option value="Healthcare">Healthcare</option>
-                <option value="Information-Technology">Information Technology</option>
-                <option value="Education">Education</option>
-                <option value="Finance">Finance</option>
-                <option value="Hospitality & Tourism">Hospitality & Tourism</option>
-                <option value="Egineeringn">Egineeringn</option>
-                <option value="Construction">Construction</option>
-                <option value="Retail">Retail</option>
-                <option value="Markerting">Markerting</option>
-                <option value="Manufacturing">Manufacturing</option>
-                <option value="Legal">Legal</option>
-                <option value="Transportation & Logistics">Transportation & Logistics</option>
+                {categories.map((cat)=>(
+                  <option key={cat} value={cat}>{cat}</option>
+                ))}
               </select>
             </div>
 

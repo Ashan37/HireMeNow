@@ -7,9 +7,9 @@ export default function JobList() {
   const [jobs, setJobs] = useState([]);
   const navigate = useNavigate();
 
-  // 1. Accept jobId as parameter
+ 
   const handleChange = (jobId) => {
-    // 2. Navigate to /apply/:jobId
+   
     navigate(`/apply/${jobId}`);
   }
 
@@ -36,6 +36,7 @@ export default function JobList() {
             <p><strong>Location:</strong> {job.location}</p>
             <p><strong>Salary:</strong> {job.salary}</p>
             <p><strong>Type:</strong> {job.type}</p>
+            <p><strong>Category:</strong> {job.category}</p>
             <p className="job-description">{job.description}</p>
 
             {/* 3. Pass a function to onClick, not the result of calling handleChange */}

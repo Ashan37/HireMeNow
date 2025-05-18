@@ -8,6 +8,7 @@ const jobSchema=new mongoose.Schema({
     type: { type: String, required: true },
     category: { type: String, required: true },
     description: { type: String, required: true },
+    createdAt:{type:Date,default:Date.now},
 });
 
 const jobModel=mongoose.models.job||mongoose.model('job',jobSchema);

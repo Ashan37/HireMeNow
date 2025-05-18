@@ -7,7 +7,7 @@ import jobModel from '../models/jobModel.js';
 export const addjob = async (req, res) => {
     const { title, company, location, salary, type,category, description } = req.body;
     if (!title || !company || !location || !salary || !type ||!category|| !description) {
-        return res.json({ success: false, message: 'Missing Details' });
+        return res.status(400).json({ success: false, message: 'Missing Details' });
     }
     try {
         const job = new jobModel({ title, company, location, salary, type,category, description });
@@ -17,12 +17,12 @@ export const addjob = async (req, res) => {
             message: "Job adding successful",
         });
     } catch (error) {
-        res.json({ success: false, message: error.message });
+        res.status(500).json({ success: false, message: error.message });
     }
 };
 
 /*-----------------Get JobID part----------------- */
-// Controller to fetch one job by ID
+
 export const getJobById = async (req, res) => {
   try {
     const job = await jobModel.findById(req.params.id);
@@ -45,6 +45,15 @@ export const getjob = async (req, res) => {
     }
 };
 
+/*-----------------Get job by Category part----------------- */
+export const getJobsByCategory = async (req, res) => {
+  try {
+    const jobs = await jobModel.find({ category: req.params.category });
+    res.json(jobs);
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
 /*-----------------Register part----------------- */
 export const register = async (req, res) => {
     const { name, email,number, password } = req.body;
