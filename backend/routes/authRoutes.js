@@ -10,7 +10,7 @@ authRouter.post('/addjob',addjob);
 authRouter.get('/getjob',getjob);
 authRouter.get('/me',getCurrentUser);
 authRouter.get('/getjob/:id', getJobById);
-authRouter.get('/job/category/:id', getJobsByCategory);
+authRouter.get('/job/category/:category', getJobsByCategory);
 
 
 export default authRouter;
