@@ -24,7 +24,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/addjob" element={<AddJob />} />
         <Route path="/apply/:jobId" element={<ApplyForm />} />
-        <Route path="/category/:category" element={<CategoryJobs />} /> {/* ✅ Category route */}
+        <Route path="/jobs/category/:category" element={<CategoryJobs />} /> {/* ✅ Category route */}
       </Routes>
     </>
   );

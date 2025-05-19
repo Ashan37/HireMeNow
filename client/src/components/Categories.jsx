@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import axios from "axios";
-import { Container, Row, Col } from "react-bootstrap";
+// src/pages/Categories.jsx
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import '/src/styles/category.css';
+import { Container, Row, Col, Card } from "react-bootstrap";
+import "/src/styles/category.css";
 
 export default function Categories() {
   const navigate = useNavigate();
@@ -21,24 +21,21 @@ export default function Categories() {
     "Transportation & Logistics",
   ];
 
-  const onClickCategory = (cat) => {
-    // push a “Jobs by Category” page
-    navigate(`/jobs/category/${encodeURIComponent(cat)}`);
-  };
-
   return (
-    <Container className="categories">
+    <Container className="categories mt-4">
       <h1>Job Categories</h1>
-      <Row>
-        {categories.map(cat => (
-          <Col
-            key={cat}
-            xs={12} sm={6} md={4} lg={3}
-            className="category_col"
-            style={{ cursor: 'pointer' }}
-            onClick={() => onClickCategory(cat)}
-          >
-            <h4>{cat}</h4>
+      <Row className="g-3">
+        {categories.map((cat) => (
+          <Col key={cat} xs={12} sm={6} md={4} lg={3}>
+            <Card
+              className="h-100 text-center p-3"
+              style={{ cursor: "pointer" }}
+              onClick={() => navigate(`/jobs/category/${encodeURIComponent(cat)}`)}
+            >
+              <Card.Body>
+                <Card.Title>{cat}</Card.Title>
+              </Card.Body>
+            </Card>
           </Col>
         ))}
       </Row>
