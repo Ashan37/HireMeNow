@@ -8,6 +8,7 @@ import Profile from './pages/Profile';
 import AddJob from './pages/AddJob';
 import Navbarr from './components/Navbarr';
 import ApplyForm from './pages/ApplyForm';
+import CategoryJobs from './pages/CategoryJobs'; // ✅ Import
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/addjob" element={<AddJob />} />
         <Route path="/apply/:jobId" element={<ApplyForm />} />
+        <Route path="/category/:category" element={<CategoryJobs />} /> {/* ✅ Category route */}
       </Routes>
     </>
   );

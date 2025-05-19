@@ -13,21 +13,21 @@ export default function AddJob() {
   const [type, setType] = useState("");
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!title || !company || !location || !salary || !type ||!category) {
+    if (!title || !company || !location || !salary || !type || !category) {
       alert("Fill all the details!");
       return;
     }
 
-    setLoading(true); 
+    setLoading(true);
 
     try {
       const res = await axios.post(
-        "http://localhost:4000/api/auth/addjob",
+        "http://localhost:4000/api/auth/jobs",
         {
           title,
           company,
@@ -52,13 +52,13 @@ export default function AddJob() {
       console.error("There was an error adding a job!", error);
       alert(error.response?.data?.message || "Error!");
     } finally {
-      setLoading(false); 
+      setLoading(false);
     }
   };
 
-  const categories=[
+  const categories = [
     "Healthcare",
-        "Information Technology",
+    "Information Technology",
     "Education",
     "Finance",
     "Hospitality & Tourism",
@@ -69,12 +69,10 @@ export default function AddJob() {
     "Manufacturing",
     "Legal",
     "Transportation & Logistics",
-
-  ]
+  ];
 
   return (
     <div>
-      
       <div
         className="card shadow mt-5 mx-auto border-primary"
         style={{ maxWidth: "700px" }}
@@ -154,7 +152,6 @@ export default function AddJob() {
               </select>
             </div>
 
-            
             <div className="mb-3">
               <label className="form-label fw-bold">Job Category</label>
               <select
@@ -165,8 +162,10 @@ export default function AddJob() {
                 required
               >
                 <option value="">Select Category</option>
-                {categories.map((cat)=>(
-                  <option key={cat} value={cat}>{cat}</option>
+                {categories.map((cat) => (
+                  <option key={cat} value={cat}>
+                    {cat}
+                  </option>
                 ))}
               </select>
             </div>
