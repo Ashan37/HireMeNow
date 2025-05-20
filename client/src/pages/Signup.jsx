@@ -11,13 +11,12 @@ export default function Signup() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
-  const [picture, setPicture] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!name || !email || !number|| !picture| !password) {
+    if (!name || !email || !number||!password) {
       alert("All fields are required");
       return;
     }
@@ -29,7 +28,6 @@ export default function Signup() {
           name,
           email,
           number,
-          picture,
           password,
         },
         {
@@ -101,7 +99,7 @@ export default function Signup() {
 
               <div className="input-group">
                 <span className="input-group-text">
-                  <i class="ri-phone-line"></i>
+                  <i className="ri-phone-line"></i>
                 </span>
                 <input
                   type="tel"

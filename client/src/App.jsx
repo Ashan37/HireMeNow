@@ -8,7 +8,7 @@ import Profile from './pages/Profile';
 import AddJob from './pages/AddJob';
 import Navbarr from './components/Navbarr';
 import ApplyForm from './pages/ApplyForm';
-import CategoryJobs from './pages/CategoryJobs'; // ✅ Import
+import CategoryJobs from './pages/CategoryJobs'; 
 
 function App() {
   return (

@@ -1,71 +1,81 @@
 .categories {
-  padding: 40px 20px;
-  background-color: #f9f9f9;
-  border-radius: 12px;
+  padding: 2rem 1rem;
+  background-color: #f8f9fa;
 }
+
 
 .categories h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #343a40;
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  font-weight: 600;
-  color: #333;
+  margin-bottom: 1.5rem;
 }
 
-.category_col {
+
+.categories .row.g-3 {
+  margin: 0 -0.5rem;
+}
+
+.categories .card {
   background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-  transition: all 0.3s ease-in-out;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.category_col h4 {
-  margin: 0;
+
+.categories .card .card-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 6rem;
+  padding: 1rem;
+}
+
+
+.categories .card-title {
   font-size: 1.1rem;
-  color: #555;
-  font-weight: 500;
-}
-
-.category_col:hover {
-  background-color: #007bff;
-  color: #fff;
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.2);
-}
-
-.category_col:hover h4 {
-  color: #fff;
-}
-
-.mt-4 {
-  margin-top: 2rem !important;
-}
-
-.mt-4 h3 {
-  color: #007bff;
   font-weight: 600;
-  margin-bottom: 1rem;
+  color: #495057;
+  margin: 0;
 }
 
-.mt-4 ul {
-  list-style-type: none;
-  padding: 0;
+
+.categories .card:hover,
+.categories .card:focus {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
-.mt-4 li {
-  background: #fff;
-  padding: 15px 20px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  border: 1px solid #eee;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
-  font-size: 1rem;
+
+.categories .card {
+  cursor: pointer;
 }
 
-.mt-4 li strong {
-  color: #333;
+
+@media (max-width: 992px) {
+  .categories .card .card-body {
+    height: auto;
+    padding: 0.75rem;
+  }
+  .categories .card-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .categories {
+    padding: 1rem 0.5rem;
+  }
+  .categories h1 {
+    font-size: 1.5rem;
+  }
+  .categories .card {
+    border-radius: 0.5rem;
+  }
+  .categories .card-title {
+    font-size: 0.95rem;
+  }
 }
