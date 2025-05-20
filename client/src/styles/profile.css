@@ -1,36 +1,103 @@
+/* src/styles/profile.css */
+
+.profile-page {
+  background-color: #f9fafc;
+  padding-bottom: 2rem;
+}
+
+/* Dashboard container */
 .dashboard-container {
-  padding: 20px;
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #ffffff;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: white;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.welcome-message {
-  font-size: 24px;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 16px;
+/* Header section with user info and buttons */
+.profile-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
 }
 
-.post-job-button {
-  background-color: #007bff;
+.profile-info h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.profile-info p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0.25rem 0;
+}
+
+.profile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.profile-btn {
+  background-color: #0d6efd;
   color: white;
   border: none;
-  padding: 12px 20px;
-  font-size: 16px;
-  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease;
 }
 
-.post-job-button:hover {
-  background-color: #0056b3;
+.profile-btn:hover {
+  background-color: #0b5ed7;
 }
 
+.logout-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.logout-btn:hover {
+  background-color: #bb2d3b;
+}
+
+.user-jobs {
+  margin-top: 1.5rem;
+}
+
+.user-jobs h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.user-jobs ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.user-jobs li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Loading text */
 .loading-text {
-  font-size: 16px;
-  color: #888;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
 }
