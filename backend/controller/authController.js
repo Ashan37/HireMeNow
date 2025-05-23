@@ -2,8 +2,34 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import userModel from '../models/userModel.js';
 import jobModel from '../models/jobModel.js';
+import applicationModel from '../models/applicationModel.js';
 
+/*-----------------Apply application part----------------- */
+export const applyJob=async (req,res)=>{
+  const {name,email,number}=req.body;
+  const pdf=req.file;
 
+  if(!name||!email||!number||!pdf){
+    return res.json({success:false,message:'Missing Details!'});
+  }
+
+  try{
+    const newApplication=new applicationModel({
+      name,
+      email,
+      number,
+      pdf:{
+        data: file.buffer,
+        mimetype: file.mimetype,
+        filename: file.originalname,
+      },
+    });
+    await newApplication.save();
+    res.json({success:true, message:'Application save to database'});
+  }catch (error) {
+    res.json({ success: false, message: error.message });
+  }
+}
 /*-----------------Job Adding part----------------- */
 export const addjob = async (req, res) => {
   const { title, company, location, salary, type, category, description } = req.body;
