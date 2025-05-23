@@ -3,6 +3,7 @@ import jwt from 'jsonwebtoken';
 import userModel from '../models/userModel.js';
 import jobModel from '../models/jobModel.js';
 
+
 /*-----------------Job Adding part----------------- */
 export const addjob = async (req, res) => {
   const { title, company, location, salary, type, category, description } = req.body;
