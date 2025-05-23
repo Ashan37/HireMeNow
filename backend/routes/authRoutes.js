@@ -8,6 +8,7 @@ import {
   getCurrentUser,
   getJobById,
   getJobsByCategory,
+  applyJob,
 } from '../controller/authController.js';
 
 const authRouter = express.Router();
@@ -24,4 +25,6 @@ authRouter.get('/jobs', getjob);                           // Get all jobs
 authRouter.get('/jobs/:id', getJobById);                   // Get job by ID
 authRouter.get('/jobs/category/:category', getJobsByCategory); // Get jobs by category
 
+// Application routes
+authRouter.post('/application',applyJob);
 export default authRouter;

@@ -65,7 +65,7 @@ export default function ApplyForm() {
         setLoading(false);
       }
     };
-    s;
+    
     fetchJob();
   }, [jobId]);
 
