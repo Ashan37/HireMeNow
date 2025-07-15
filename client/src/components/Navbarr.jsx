@@ -37,7 +37,7 @@ function Navbarr() {
             {user ? (
               <>
               
-                <span style={{ fontWeight: 600 }}>
+                <span style={{ fontWeight: 600,marginTop:'6px' }}>
                   <Link to={'/profile'} style={{textDecoration:'none',color:'inherit'}}>
                    {user.name}
                   </Link>

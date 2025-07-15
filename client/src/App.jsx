@@ -9,6 +9,7 @@ import AddJob from './pages/AddJob';
 import Navbarr from './components/Navbarr';
 import ApplyForm from './pages/ApplyForm';
 import CategoryJobs from './pages/CategoryJobs'; 
+import EditProfile from './pages/EditProfile';
 
 function App() {
   return (
@@ -22,9 +23,10 @@ function App() {
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/profile:profileid" element={<EditProfile/>} />
         <Route path="/addjob" element={<AddJob />} />
         <Route path="/apply/:jobId" element={<ApplyForm />} />
-        <Route path="/jobs/category/:category" element={<CategoryJobs />} /> {/* ✅ Category route */}
+        <Route path="/jobs/category/:category" element={<CategoryJobs />} />
       </Routes>
     </>
   );
