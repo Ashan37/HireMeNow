@@ -43,8 +43,6 @@ function Navbarr() {
                   </Link>
                  
                 </span>
-                {/* This is the “Logout Button”:
-                    it calls our shared logout() and then redirects */}
                 <Button
                   onClick={handleLogoutClick}
                   variant="outline-dark"

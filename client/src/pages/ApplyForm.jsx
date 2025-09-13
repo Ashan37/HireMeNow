@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "/src/styles/applyform.css";
 import axios from "axios";
 
@@ -9,46 +8,50 @@ export default function ApplyForm() {
   const [job, setJob] = useState(null);
   const [loading, setLoading] = useState(true);
 
-
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
-  const [pdf, setPdf] = useState("");
+  const [pdf, setPdf] = useState(null);
 
-  const handleSubmit=async (e)=>{
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-     if (!name || !email || !number||!pdf) {
+    if (!name || !email || !number || !pdf) {
       alert("All fields are required");
       return;
     }
-    try{
-      const res=await axios.post(
+
+    try {
+      const formData = new FormData();
+      formData.append("name", name);
+      formData.append("email", email);
+      formData.append("number", number);
+      formData.append("pdf", pdf);
+
+      const res = await axios.post(
         "http://localhost:4000/api/auth/applyJob",
+        formData,
         {
-          name,
-          email,
-          number,
-          pdf,
-        },
-        {
-          withCredentials:true,
+          withCredentials: true,
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
         }
       );
 
-      if(res.data.success){
-        alert("You apllied for this job successfully!");
+      if (res.data.success) {
+        alert("You applied for this job successfully!");
         navigate("/profile");
-      }else{
-        alert(res.data.message ||"Failed!");
+      } else {
+        alert(res.data.message || "Failed!");
       }
-    }catch(error){
-      console.error("There was an error apply for this job!",error);
-      alert(res.data.message || "Network error!");
+    } catch (error) {
+      console.error("There was an error applying for this job!", error);
+      alert("Network error!");
     }
-  }
+  };
 
   useEffect(() => {
     const fetchJob = async () => {
@@ -65,7 +68,7 @@ export default function ApplyForm() {
         setLoading(false);
       }
     };
-    
+
     fetchJob();
   }, [jobId]);
 
@@ -105,7 +108,18 @@ export default function ApplyForm() {
           onChange={(e) => setNumber(e.target.value)}
           required
         />
-        
+       
+        <input
+          type="file"
+          accept="application/pdf"
+          placeholder="Add your CV"
+          name="pdf"
+          onChange={(e) => setPdf(e.target.files[0])}
+          required
+        />
+        <label htmlFor="pdf" className="cv-label">Add your CV (PDF only)</label>
+        {pdf && <p>Selected file: {pdf.name}</p>}
+
         <button type="submit">Submit Application</button>
       </form>
     </div>
