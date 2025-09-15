@@ -1,3 +1,4 @@
+// src/pages/ApplyForm.jsx
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "/src/styles/applyform.css";
@@ -7,7 +8,6 @@ export default function ApplyForm() {
   const { jobId } = useParams();
   const [job, setJob] = useState(null);
   const [loading, setLoading] = useState(true);
-
   const navigate = useNavigate();
 
   const [name, setName] = useState("");
@@ -35,9 +35,7 @@ export default function ApplyForm() {
         formData,
         {
           withCredentials: true,
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
+          headers: { "Content-Type": "multipart/form-data" },
         }
       );
 
@@ -60,7 +58,6 @@ export default function ApplyForm() {
           `http://localhost:4000/api/auth/jobs/${jobId}`,
           { withCredentials: true }
         );
-        console.log("Fetched job:", res.data);
         setJob(res.data);
       } catch (error) {
         console.error("Error fetching job:", error);
@@ -68,7 +65,6 @@ export default function ApplyForm() {
         setLoading(false);
       }
     };
-
     fetchJob();
   }, [jobId]);
 
@@ -108,16 +104,13 @@ export default function ApplyForm() {
           onChange={(e) => setNumber(e.target.value)}
           required
         />
-       
         <input
           type="file"
           accept="application/pdf"
-          placeholder="Add your CV"
           name="pdf"
           onChange={(e) => setPdf(e.target.files[0])}
           required
         />
-        <label htmlFor="pdf" className="cv-label">Add your CV (PDF only)</label>
         {pdf && <p>Selected file: {pdf.name}</p>}
 
         <button type="submit">Submit Application</button>

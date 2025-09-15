@@ -1,4 +1,5 @@
-import express from 'express';
+import express from "express";
+import multer from "multer";
 import {
   register,
   login,
@@ -9,22 +10,27 @@ import {
   getJobById,
   getJobsByCategory,
   applyJob,
-} from '../controller/authController.js';
+} from "../controller/authController.js";
 
 const authRouter = express.Router();
 
-// Auth Routes
-authRouter.post('/register', register);
-authRouter.post('/login', login);
-authRouter.post('/logout', logout);
-authRouter.get('/me', getCurrentUser);
+// Setup multer for file upload
+const storage = multer.memoryStorage();
+const upload = multer({ storage });
 
-// Job Routes (corrected paths)
-authRouter.post('/jobs', addjob);                          // Add a job
-authRouter.get('/jobs', getjob);                           // Get all jobs
-authRouter.get('/jobs/:id', getJobById);                   // Get job by ID
-authRouter.get('/jobs/category/:category', getJobsByCategory); // Get jobs by category
+// Auth routes
+authRouter.post("/register", register);
+authRouter.post("/login", login);
+authRouter.post("/logout", logout);
+authRouter.get("/me", getCurrentUser);
 
-// Application routes
-authRouter.post('/application',applyJob);
+// Job routes
+authRouter.post("/jobs", addjob);
+authRouter.get("/jobs", getjob);
+authRouter.get("/jobs/:id", getJobById);
+authRouter.get("/jobs/category/:category", getJobsByCategory);
+
+// Application route
+authRouter.post("/applyJob", upload.single("pdf"), applyJob);
+
 export default authRouter;
